@@ -263,10 +263,16 @@
     /* --- "Show every step" fallback view -------------------------------- */
     var toggleAll = root.querySelector('[data-je-showall]');
     if (toggleAll) {
+      // The two labels are owned by the markup, like data-name above: one
+      // explorer holds four mentoring journeys and another holds a single
+      // six-step sequence, and "Show all four journeys" is wrong on the
+      // second one. The fallbacks keep older markup working unchanged.
+      var shutLbl = toggleAll.getAttribute('data-label-closed') || 'Show all four journeys as a list';
+      var openLbl = toggleAll.getAttribute('data-label-open')   || 'Hide the full list';
       toggleAll.addEventListener('click', function () {
         var open = source.classList.toggle('is-open');
         toggleAll.setAttribute('aria-expanded', open ? 'true' : 'false');
-        toggleAll.textContent = open ? 'Hide the full list' : 'Show all four journeys as a list';
+        toggleAll.textContent = open ? openLbl : shutLbl;
       });
     }
 
