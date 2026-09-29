@@ -79,7 +79,9 @@ file, commit, and GitHub Pages publishes it.
 │   ├── css/wip.css        ← design tokens + components. Single source of truth.
 │   ├── js/wip.js          ← theme, back-to-top, journey explorer, roster
 │   ├── data/people.json   ← the community roll. Names live ONLY here.
-│   └── img/               ← logos (see img/README.md for what's still needed)
+│   └── img/               ← logos, people, event photos, QR codes
+│       └── qr/            ← codes for the site URL. No page uses them: they
+│                            are for slides, print and conference handouts.
 ├── style-guide/           ← documents and previews everything in wip.css
 ├── index.html             ← Women in Power overview (site root)
 ├── mentoring/
