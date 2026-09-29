@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Speaker guide | Women in Power Skilling Series</title>
+<meta name="description" content="What happens when you speak in the Women in Power Skilling Series: confirming your date, what we need from you, how the day runs, and a package for anyone giving a first talk.">
+<meta name="theme-color" content="#3b0b4e">
+<script>(function(){try{var t=localStorage.getItem('wip-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<script>document.documentElement.classList.add('rv-on');setTimeout(function(){if(!window.WIP_REVEAL)document.documentElement.classList.remove('rv-on');},3000);</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500..700;1,500..700&family=Inter:wght@400;500;600&family=Jost:wght@400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/wip.css">
+<style>
+  /* Page-specific. Promote into wip.css only if a second page needs it. */
+
+  /* The thirty-minute outline. A grid rather than a table: two columns of
+     unequal weight, and it has to stay readable on a phone. */
+  .outline { list-style: none; padding: 0; margin: var(--s-4) 0 0; display: grid; gap: var(--s-2); }
+  .outline li {
+    margin: 0; display: grid; grid-template-columns: 4.5rem 1fr; gap: var(--s-3);
+    align-items: baseline; background: var(--surface-2); border: 1px solid var(--line);
+    border-radius: var(--r-md); padding: var(--s-3) var(--s-4);
+  }
+  .outline .mins {
+    font-family: var(--font-display); font-weight: 700; font-size: var(--t-sm);
+    color: var(--accent); font-variant-numeric: lining-nums; white-space: nowrap;
+  }
+  .outline .what { color: var(--ink-2); font-size: 0.9375rem; }
+
+  /* A checklist someone ticks on paper. Not form checkboxes: there is
+     nothing to submit, and a real <input> would suggest there is. */
+  .check { list-style: none; padding: 0; margin: var(--s-4) 0 0; columns: 1; }
+  @media (min-width: 780px) { .check { columns: 2; column-gap: var(--s-6); } }
+  .check li {
+    position: relative; padding-left: 2rem; margin: 0 0 var(--s-3);
+    break-inside: avoid; color: var(--ink-2); font-size: 0.9375rem;
+  }
+  .check li::before {
+    content: ""; position: absolute; left: 0; top: .15em;
+    width: 1.1rem; height: 1.1rem; border: 1.5px solid var(--accent);
+    border-radius: 4px; background: var(--surface);
+  }
+
+  /* The sample LinkedIn post. Line breaks are part of it, so unlike the
+     Prompt Pack this one keeps them on copy. */
+  .post {
+    background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--r-md);
+    padding: var(--s-4); font-size: 0.9375rem; line-height: 1.6; color: var(--ink);
+    white-space: pre-wrap; max-width: none;
+  }
+  .post .b {
+    color: var(--accent); font-weight: 600;
+    background: var(--joint-wash); border-radius: 4px; padding: 0 .25em;
+  }
+  .copy {
+    margin-top: var(--s-3); display: inline-flex; align-items: center; gap: .5em;
+    cursor: pointer; background: var(--win-navy); color: #fff; border: 1px solid transparent;
+    border-radius: var(--r-pill); padding: .6em 1.2em;
+    font-family: var(--font-display); font-size: var(--t-sm); font-weight: 600;
+    transition: background .2s var(--ease), transform .18s var(--ease);
+  }
+  .copy:hover { background: var(--win-navy-soft); transform: translateY(-1px); }
+  .copy.done { background: var(--ok); }
+  :root[data-theme="dark"] .copy { background: #1d4fa8; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .copy { background: #1d4fa8; } }
+  @media (prefers-reduced-motion: reduce) { .copy:hover { transform: none; } }
+
+  @media print {
+    .copy { display: none; }
+    .outline li, .post { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="announce">
+  <a href="../../ppcc-2026/">
+    <span>Women in Power is at PPCC 2026, all three days</span>
+    <span class="where">MGM Grand, Las Vegas &middot; 27&ndash;29 October</span>
+    <span class="go">See the program &rarr;</span>
+  </a>
+</div>
+
+<header class="masthead" id="top">
+  <div class="wrap">
+    <div class="masthead-top">
+      <a class="lockup" href="../../">
+        <img class="lockup-img" src="../../assets/img/wip-wordmark-reverse.png" alt="Women in Power" width="1200" height="607">
+      </a>
+      <div class="masthead-right">
+        <nav class="masthead-nav" aria-label="Main">
+          <a href="../../mentoring/">Mentoring</a>
+          <a href="../" aria-current="page">Skilling</a>
+          <a href="../../about/">About us</a>
+          <span class="nav-soon">Networking <em>soon</em></span>
+        </nav>
+        <button type="button" class="theme-toggle" data-theme-toggle>Theme</button>
+      </div>
+    </div>
+    <p class="kicker">Skilling &middot; Speaker guide</p>
+    <h1>You&rsquo;re speaking. Here is what <em>happens</em> next.</h1>
+    <p class="standfirst">Everything between the first date request and the thank-you note, so none of the process is a surprise. If this is your first talk, there is a section further down written for you.</p>
+    <p class="meta">
+      <span>Your session <strong>about 45 minutes</strong></span>
+      <span>You talk for <strong>about 30</strong></span>
+      <span>A moderator <strong>is in the room throughout</strong></span>
+    </p>
+  </div>
+</header>
+
+<nav class="subnav" aria-label="Skilling section">
+  <div class="wrap">
+    <span class="subnav-label">Skilling</span>
+    <ul>
+        <li><a href="../">Overview</a></li>
+        <li><a href="./" aria-current="page">Speaker guide</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="jump">
+  <div class="wrap">
+    <ul>
+      <li><a href="#steps">What happens, in order</a></li>
+      <li><a href="#need">What we need</a></li>
+      <li><a href="#day">On the day</a></li>
+      <li><a href="#first-time">First talk?</a></li>
+      <li><a href="#checklist">Checklist</a></li>
+      <li><a href="#promote">Promoting it</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </div>
+</div>
+
+<main id="main">
+<div class="wrap">
+
+  <!--
+    ======================================================================
+    Source: the Skilling Committee's speaker guide. This is the
+    member-facing cut: the committee's own process notes, internal
+    tooling and staffing stay in the source document.
+
+    TODO: the source has a placeholder for the skilling team's email
+    address. Until there is one we can publish, every "contact us" on this
+    page points at the LinkedIn page. Add the address in one place (the
+    FAQ) when it exists, not in six.
+    ======================================================================
+  -->
+
+  <!-- ============================== STEPS ============================ -->
+  <section class="section" id="steps">
+    <div class="section-head">
+      <p class="eyebrow">What happens, in order</p>
+      <h2>Six steps, and what each one needs from you</h2>
+    </div>
+    <p class="lead">Nothing here happens to you without warning. Every step says what we do and the one thing we need back.</p>
+
+    <ol class="timeline" style="margin-top:var(--s-5)">
+      <li>
+        <p class="tl-when">When scheduling opens</p>
+        <p class="tl-title">Confirm your date</p>
+        <p class="tl-body">We draft the dates for the season and send you a sheet with the slots we are proposing for you.</p>
+        <p class="tl-body"><strong>Your part:</strong> take the slot we proposed, or add alternates that suit you better. Please reply inside a week, because the rest of the calendar waits on it.</p>
+      </li>
+      <li>
+        <p class="tl-when">Once your slot is set</p>
+        <p class="tl-title">Get your Teams invite</p>
+        <p class="tl-body">We set your session up as a Microsoft Teams event and add you as a speaker. Teams sends you the calendar invite.</p>
+        <p class="tl-body"><strong>Your part:</strong> accept it, and check it landed on the account you will actually present from. If it needs to go to a different address, tell us now rather than on the day.</p>
+      </li>
+      <li>
+        <p class="tl-when">About two weeks before</p>
+        <p class="tl-title">The two-week check-in</p>
+        <p class="tl-body">We come back to you on LinkedIn or by email to confirm the date, the title and that you are ready.</p>
+        <p class="tl-body"><strong>Your part:</strong> reply. This is the moment to change your title, add a co-speaker, or say you are unsure about something.</p>
+      </li>
+      <li>
+        <p class="tl-when">As soon as you confirm</p>
+        <p class="tl-title">Promotion starts</p>
+        <p class="tl-body">We announce your session on the Women in Power page on LinkedIn. We hold promotion until you have confirmed, so your name never goes out on something you are not ready for.</p>
+        <p class="tl-body"><strong>Your part:</strong> reshare the post with a line of your own. Your network is the audience most likely to turn up. There is <a href="#promote">wording you can borrow</a> further down.</p>
+      </li>
+      <li>
+        <p class="tl-when">Session day</p>
+        <p class="tl-title">You present</p>
+        <p class="tl-body">Join fifteen minutes early. A moderator opens the session, introduces you, and looks after the chat and the questions so you can think about one thing only.</p>
+        <p class="tl-body"><strong>Your part:</strong> join from the invite, share your screen, and enjoy it. <a href="#day">More on the day itself.</a></p>
+      </li>
+      <li>
+        <p class="tl-when">Afterward</p>
+        <p class="tl-title">The thank-you</p>
+        <p class="tl-body">You get a note from us, and the recording goes out to the community.</p>
+        <p class="tl-body"><strong>Your part:</strong> send us your slides or links if you would like them shared, and put the talk on your LinkedIn profile. It counts.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- =============================== NEED ============================ -->
+  <section class="section" id="need">
+    <div class="section-head">
+      <p class="eyebrow">Four things</p>
+      <h2>What we need from you</h2>
+    </div>
+    <p class="lead">Have these ready by the two-week check-in. They are what your announcement post is built from.</p>
+
+    <div class="table-scroll" style="margin-top:var(--s-4)">
+      <table>
+        <caption class="small muted">Send all four together if you can, so we are not chasing one of them.</caption>
+        <thead>
+          <tr><th scope="col">What</th><th scope="col">What good looks like</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Session title</th>
+            <td>The final wording. Clear beats clever: say what somebody will be able to do afterwards.</td>
+          </tr>
+          <tr>
+            <th scope="row">Short description</th>
+            <td>Two or three sentences: who it is for, and what they walk away with.</td>
+          </tr>
+          <tr>
+            <th scope="row">Bio</th>
+            <td>Two or three sentences, written in the third person.</td>
+          </tr>
+          <tr>
+            <th scope="row">Photo</th>
+            <td>Optional. We use your LinkedIn profile picture unless you send us something else. If you would rather we used a different one, send a clear, well-lit image, square if you have it.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ================================ DAY ============================ -->
+  <section class="section" id="day">
+    <div class="section-head">
+      <p class="eyebrow">On the day</p>
+      <h2>Forty-five minutes, and you are not alone in the room</h2>
+    </div>
+    <p class="lead">Thirty minutes of talk, then ten to fifteen of questions. A moderator from the skilling team is there the whole time.</p>
+
+    <div class="grid grid-2" style="margin-top:var(--s-5)">
+      <div class="card card-bloom">
+        <h4>Before you join</h4>
+        <p class="small muted">Restart your laptop an hour ahead and plug it in. Use a headset if you have one. Close anything you do not want on screen, turn on Do Not Disturb, and open your slides and demo tabs before you join, not after.</p>
+      </div>
+      <div class="card card-bloom">
+        <h4>While you present</h4>
+        <p class="small muted">Share a single window rather than your whole screen. Camera on if you are comfortable, off if you are not. The moderator gives you a time check in the chat near the end, so you do not have to watch the clock.</p>
+      </div>
+      <div class="card card-bloom">
+        <h4>Questions</h4>
+        <p class="small muted">The moderator collects them from the chat and reads them out, either at natural pauses or at the end. Tell us which you prefer. &ldquo;I don&rsquo;t know, let me follow up on LinkedIn&rdquo; is a perfectly good answer.</p>
+      </div>
+      <div class="card card-bloom">
+        <h4>If something breaks</h4>
+        <p class="small muted">It happens to everyone. If the demo fails, switch to your screenshots and keep going. If you drop off the call, rejoin from the same invite. The moderator holds the room until you are back.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FIRST TIME ========================= -->
+  <section class="section" id="first-time">
+    <div class="panel-bloom">
+      <p class="eyebrow">If this is your first talk</p>
+      <h2 style="margin-top:var(--s-2)">More than fifty women gave their first talk <em>here</em></h2>
+      <p class="lead">Everything below is what we have learned helps most. Use what is useful to you and ignore the rest.</p>
+
+      <h3 style="margin-top:var(--s-6)">Shape it around one idea</h3>
+      <p>Pick the single thing you want people to leave with, and build everything else around it. Thirty minutes goes faster than you think. An outline that fits:</p>
+      <ul class="outline">
+        <li><span class="mins">3 min</span><span class="what">Who you are, and the problem you are solving</span></li>
+        <li><span class="mins">5 min</span><span class="what">Why it matters, with a real example</span></li>
+        <li><span class="mins">15 min</span><span class="what">Show it: the demo or walkthrough, in two or three parts</span></li>
+        <li><span class="mins">3 min</span><span class="what">What went wrong, and what you would do differently</span></li>
+        <li><span class="mins">4 min</span><span class="what">Three takeaways, and where to learn more</span></li>
+      </ul>
+
+      <div class="grid grid-2" style="margin-top:var(--s-6)">
+        <div class="card">
+          <h4>Slides and demos</h4>
+          <p class="small muted">Fewer words, bigger type. If somebody has to read the slide, they are not listening to you. Zoom your browser to 125% or more for demos, and keep screenshots or a short recording of every demo step as a backup. Put your name and LinkedIn on the first slide and the last.</p>
+        </div>
+        <div class="card">
+          <h4>Rehearse out loud</h4>
+          <p class="small muted">Say the whole thing out loud twice, with a timer, and aim to land at twenty-eight minutes so you have room. Reading it silently does not count: speaking takes longer than you expect. Want a dry run with somebody from the skilling team? Ask at the two-week check-in.</p>
+        </div>
+        <div class="card">
+          <h4>Teams, before it matters</h4>
+          <p class="small muted">Have a practice meeting with a friend and share your screen. Find Share, Mute and the chat panel while nothing is at stake. If you use PowerPoint, try PowerPoint Live so you can see your notes while the audience sees only slides. A second screen for the chat helps, but you do not need one.</p>
+        </div>
+        <div class="card">
+          <h4>Nerves</h4>
+          <p class="small muted">Feeling nervous means you care, and it fades about two minutes in. Script your opening lines word for word so you start on solid ground. The audience is this community: they came because they want you to do well, and the moderator is with you the whole time.</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:var(--s-6)">And afterwards</h3>
+      <p>One talk makes the next one easier to land. Put the session on your LinkedIn profile, give the talk again at a local user group, and watch for the next call for speakers. Speakers from this series have gone on to conference stages and to the Microsoft MVP award.</p>
+    </div>
+  </section>
+
+  <!-- ============================ CHECKLIST ========================== -->
+  <section class="section" id="checklist">
+    <div class="section-head">
+      <p class="eyebrow">Ten things</p>
+      <h2>Your checklist</h2>
+    </div>
+    <p class="lead">Print it, or just read down it the week before.</p>
+    <ul class="check">
+      <li>Confirmed my date in the speaker sheet</li>
+      <li>Accepted the Teams invite, on the account I will present from</li>
+      <li>Sent my title, description and bio, plus a photo if I do not want my LinkedIn one used</li>
+      <li>Written a one-page outline</li>
+      <li>Rehearsed out loud twice, with a timer</li>
+      <li>Saved backup screenshots of the demo</li>
+      <li>Practiced sharing my screen in Teams</li>
+      <li>Replied to the two-week check-in</li>
+      <li>Reshared the Women in Power post</li>
+      <li>Notifications off, spare tabs closed, water within reach</li>
+    </ul>
+  </section>
+
+  <!-- ============================= PROMOTE =========================== -->
+  <section class="section" id="promote">
+    <div class="section-head">
+      <p class="eyebrow">Promoting it</p>
+      <h2>Reshare the post in your own words</h2>
+    </div>
+    <p class="lead">When our announcement goes up on the Women in Power page, reshare it with a line of your own. That reshare is what fills the room. Here is a starting point.</p>
+
+    <div class="card" style="margin-top:var(--s-4)">
+      <div class="post" id="sample-post">I&rsquo;m speaking at the Women in Power Skilling Series on <span class="b">[date]</span>.
+
+I&rsquo;ll be sharing <span class="b">[one line on what people will learn]</span>. It&rsquo;s online and free to join.
+
+Register here: <span class="b">[link]</span>
+
+#WomenInPower #MicrosoftCommunity</div>
+      <button class="copy" type="button" data-copy="sample-post">Copy the post</button>
+      <p class="small muted">Swap the <strong>[brackets]</strong>. Say why you picked the topic if you can: that line is what makes somebody click.</p>
+    </div>
+  </section>
+
+  <!-- =============================== FAQ ============================= -->
+  <section class="section" id="faq">
+    <div class="section-head">
+      <p class="eyebrow">Questions</p>
+      <h2>Common questions</h2>
+    </div>
+    <details class="faq">
+      <summary>What if I need to change my date?</summary>
+      <p>Tell us as early as you can. Before promotion starts it is usually a simple swap. After that we will still do our best, but it means re-announcing the session.</p>
+    </details>
+    <details class="faq">
+      <summary>Can I bring a co-speaker?</summary>
+      <p>Yes. Let us know by the two-week check-in so we can add her to the Teams event and put her in the promotion.</p>
+    </details>
+    <details class="faq">
+      <summary>I didn&rsquo;t get the Teams invite. What now?</summary>
+      <p>Check your junk folder and any other address you use, then message us. We can re-add you as a speaker in a minute.</p>
+    </details>
+    <details class="faq">
+      <summary>Do I have to use a slide template?</summary>
+      <p>No. Use your own slides. We send one opening slide with the series branding, for the moderator&rsquo;s introduction.</p>
+    </details>
+    <details class="faq">
+      <summary>Will my session be recorded?</summary>
+      <p>Yes. Sessions are recorded and the recording is shared with the community afterwards. Tell us before you start if there is anything on screen that should not be in it.</p>
+    </details>
+    <details class="faq">
+      <summary>Who do I contact?</summary>
+      <p>Reply to the message from the skilling team, or send us a message on the <a href="https://www.linkedin.com/company/women-in-power-platform" target="_blank" rel="noopener">Women in Power page on LinkedIn</a>. It reaches the same people.</p>
+    </details>
+
+    <p class="row" style="margin-top:var(--s-6)">
+      <a class="btn btn-accent" href="../">Back to the Skilling Series &rarr;</a>
+    </p>
+    <p class="small muted">Thank you for giving your time to this community.</p>
+  </section>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-row">
+    <div>
+      <img class="win-logo" src="../../assets/img/win-logo.png" alt="Women's Innovation Network (WIN)">
+      <p class="tagline">When women innovate, the future follows.</p>
+      <p class="small" style="margin-top:var(--s-2)">Women in Power is a program of the Women&rsquo;s Innovation Network.</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="../../">Women in Power</a>
+      <a href="../../about/">About us</a>
+      <a href="../../mentoring/">Mentoring</a>
+      <a href="../">Skilling Series</a>
+      <a href="./">Speaker guide</a>
+      <a href="https://www.linkedin.com/company/women-in-power-platform" target="_blank" rel="noopener">Women in Power on LinkedIn</a>
+    </nav>
+  </div>
+</footer>
+
+<a class="to-top" href="#top" title="Back to top">
+  <span class="visually-hidden">Back to top</span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+</a>
+
+<script src="../../assets/js/wip.js" defer></script>
+<script>
+// Copy-to-clipboard for the sample post. The Prompt Pack has a near-twin of
+// this, but that one collapses whitespace: a prompt is one paragraph. Here
+// the line breaks are the shape of the LinkedIn post, so they are kept.
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('.copy');
+  if (!btn) return;
+  var el = document.getElementById(btn.getAttribute('data-copy'));
+  if (!el) return;
+  var text = el.innerText.replace(/[ \t]+/g, ' ').replace(/\n{3,}/g, '\n\n').trim();
+
+  function done() {
+    var old = btn.textContent;
+    btn.textContent = 'Copied ✓';
+    btn.classList.add('done');
+    setTimeout(function () { btn.textContent = old; btn.classList.remove('done'); }, 1600);
+  }
+
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done, fallback);
+  } else {
+    fallback();
+  }
+
+  // execCommand path for insecure contexts and older browsers.
+  function fallback() {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:absolute;left:-9999px;';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); done(); } catch (err) { /* nothing to do */ }
+    document.body.removeChild(ta);
+  }
+});
+</script>
+</body>
+</html>
