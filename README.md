@@ -106,10 +106,21 @@ markers, or they will vanish in dark mode.
 
 ### The journey explorer
 
-The interactive walkthrough on the cohort page reads its content from the four
-plain `<ol class="timeline">` lists already in the markup, so there is one copy
-of the words. With JavaScript off — and on paper — those lists simply render in
-full. To add a journey, add a `.je-journey` block; no JavaScript changes.
+The interactive walkthrough reads its content from the plain
+`<ol class="timeline">` lists already in the markup, so there is one copy of the
+words. With JavaScript off — and on paper — those lists simply render in full.
+To add a journey, add a `.je-journey` block; no JavaScript changes.
+
+It is used on two pages now: the cohort page, with four journeys behind a pair
+of segmented controls, and the speaker guide, with a single six-step sequence
+and no controls at all. For one journey, leave `.je-controls` out and set
+`data-tier` and `data-role` on the `.journey-explorer` to match the one
+`.je-journey`; they are only a lookup key and can name anything. Two more
+things bit us the first time round: a step renders the **first** `.tl-body` it
+finds, so a step with two paragraphs needs `.tl-body` to be a `<div>` wrapping
+them; and the "show everything" button takes its wording from
+`data-label-closed` / `data-label-open`, falling back to the cohort page's
+"Show all four journeys as a list", which is wrong anywhere else.
 
 ### Making a change
 

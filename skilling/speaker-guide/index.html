@@ -15,6 +15,14 @@
 <style>
   /* Page-specific. Promote into wip.css only if a second page needs it. */
 
+  /* With JavaScript off the explorer hides itself and the timeline carries
+     the content, but .je-summary is filled in by the script, so it would
+     render as an empty line above the list. The .js-only utility cannot do
+     this one: .je-summary sets display:flex further down wip.css and wins on
+     source order. */
+  .je-summary { display: none; }
+  .has-js .je-summary { display: flex; }
+
   /* The thirty-minute outline. A grid rather than a table: two columns of
      unequal weight, and it has to stay readable on a phone. */
   .outline { list-style: none; padding: 0; margin: var(--s-4) 0 0; display: grid; gap: var(--s-2); }
@@ -155,48 +163,115 @@
   <section class="section" id="steps">
     <div class="section-head">
       <p class="eyebrow">What happens, in order</p>
-      <h2>Six steps, and what each one needs from you</h2>
+      <h2>Six steps, and what each one needs <em>from you</em></h2>
     </div>
-    <p class="lead">Nothing here happens to you without warning. Every step says what we do and the one thing we need back.</p>
+    <p class="lead">Nothing here happens to you without warning. Step through it, or open the whole list at the bottom.</p>
 
-    <ol class="timeline" style="margin-top:var(--s-5)">
-      <li>
-        <p class="tl-when">When scheduling opens</p>
-        <p class="tl-title">Confirm your date</p>
-        <p class="tl-body">We draft the dates for the season and send you a sheet with the slots we are proposing for you.</p>
-        <p class="tl-body"><strong>Your part:</strong> take the slot we proposed, or add alternates that suit you better. Please reply inside a week, because the rest of the calendar waits on it.</p>
-      </li>
-      <li>
-        <p class="tl-when">Once your slot is set</p>
-        <p class="tl-title">Get your Teams invite</p>
-        <p class="tl-body">We set your session up as a Microsoft Teams event and add you as a speaker. Teams sends you the calendar invite.</p>
-        <p class="tl-body"><strong>Your part:</strong> accept it, and check it landed on the account you will actually present from. If it needs to go to a different address, tell us now rather than on the day.</p>
-      </li>
-      <li>
-        <p class="tl-when">About two weeks before</p>
-        <p class="tl-title">The two-week check-in</p>
-        <p class="tl-body">We come back to you on LinkedIn or by email to confirm the date, the title and that you are ready.</p>
-        <p class="tl-body"><strong>Your part:</strong> reply. This is the moment to change your title, add a co-speaker, or say you are unsure about something.</p>
-      </li>
-      <li>
-        <p class="tl-when">As soon as you confirm</p>
-        <p class="tl-title">Promotion starts</p>
-        <p class="tl-body">We announce your session on the Women in Power page on LinkedIn. We hold promotion until you have confirmed, so your name never goes out on something you are not ready for.</p>
-        <p class="tl-body"><strong>Your part:</strong> reshare the post with a line of your own. Your network is the audience most likely to turn up. There is <a href="#promote">wording you can borrow</a> further down.</p>
-      </li>
-      <li>
-        <p class="tl-when">Session day</p>
-        <p class="tl-title">You present</p>
-        <p class="tl-body">Join fifteen minutes early. A moderator opens the session, introduces you, and looks after the chat and the questions so you can think about one thing only.</p>
-        <p class="tl-body"><strong>Your part:</strong> join from the invite, share your screen, and enjoy it. <a href="#day">More on the day itself.</a></p>
-      </li>
-      <li>
-        <p class="tl-when">Afterward</p>
-        <p class="tl-title">The thank-you</p>
-        <p class="tl-body">You get a note from us, and the recording goes out to the community.</p>
-        <p class="tl-body"><strong>Your part:</strong> send us your slides or links if you would like them shared, and put the talk on your LinkedIn profile. It counts.</p>
-      </li>
-    </ol>
+    <!--
+      The same widget as the mentoring journeys on the cohort page, with one
+      journey instead of four, so there are no track and role controls. The
+      words live once, in the timeline inside .je-source: that is what the
+      explorer reads, and what a reader sees with JavaScript off or on paper.
+
+      data-tier and data-role are the explorer's lookup key. They are not
+      mentoring tiers here, just the name of the one journey on this page,
+      and they have to match the pair on the .je-journey below.
+    -->
+    <div class="journey-explorer" data-tier="speaker" data-role="guide">
+
+      <p class="je-summary"><span class="je-total"></span></p>
+
+      <div class="je-stage">
+        <div class="je-railwrap">
+          <div class="je-rail" role="tablist" aria-label="Steps, from confirming your date to the thank-you"></div>
+        </div>
+        <div class="je-panel" id="je-panel" role="tabpanel" tabindex="0">
+          <p class="je-count">Step 1 of 6</p>
+          <p class="je-when">When scheduling opens</p>
+          <h3 class="je-title">Confirm your date</h3>
+          <div class="je-body"><p>Step through the six stages, from the first date request to the thank-you note.</p></div>
+          <div class="je-tags"></div>
+        </div>
+        <div class="je-foot">
+          <div class="je-bar"><i></i></div>
+          <div class="je-nav">
+            <button type="button" class="je-btn" data-je-prev>&larr; Previous</button>
+            <button type="button" class="je-btn" data-je-next>Next &rarr;</button>
+          </div>
+        </div>
+      </div>
+
+      <p class="je-toggle-all js-only">
+        <button type="button" class="btn btn-ghost" data-je-showall aria-expanded="false"
+                data-label-closed="Show all six steps as a list"
+                data-label-open="Hide the full list">Show all six steps as a list</button>
+      </p>
+
+      <!-- The source of the words. The explorer reads these; with JS off,
+           and on paper, they render as a plain timeline. -->
+      <div class="je-source">
+        <div class="je-journey" data-tier="speaker" data-role="guide"
+             data-total="Six steps. Everything outside the session itself adds up to about half an hour of your time.">
+          <h4>From the first date request to the thank-you note</h4>
+          <ol class="timeline">
+            <li data-label="Your date">
+              <div class="tl-when">When scheduling opens</div>
+              <div class="tl-title">Confirm your date</div>
+              <div class="tl-body">
+                <p>We draft the dates for the season and send you a sheet with the slots we are proposing for you.</p>
+                <p><strong>Your part:</strong> take the slot we proposed, or add alternates that suit you better. Please reply inside a week, because the rest of the calendar waits on it.</p>
+              </div>
+              <span class="tl-time">10 min</span>
+            </li>
+            <li data-label="Teams invite">
+              <div class="tl-when">Once your slot is set</div>
+              <div class="tl-title">Get your Teams invite</div>
+              <div class="tl-body">
+                <p>We set your session up as a Microsoft Teams event and add you as a speaker. Teams sends you the calendar invite.</p>
+                <p><strong>Your part:</strong> accept it, and check it landed on the account you will actually present from. If it needs to go to a different address, tell us now rather than on the day.</p>
+              </div>
+              <span class="tl-time">2 min</span>
+            </li>
+            <li data-label="Check-in">
+              <div class="tl-when">About two weeks before</div>
+              <div class="tl-title">The two-week check-in</div>
+              <div class="tl-body">
+                <p>We come back to you on LinkedIn or by email to confirm the date, the title and that you are ready.</p>
+                <p><strong>Your part:</strong> reply. This is the moment to change your title, add a co-speaker, or say you are unsure about something. It is also when we need <a href="#need">your title, description, bio and photo</a>.</p>
+              </div>
+              <span class="tl-time">15 min</span>
+            </li>
+            <li data-label="Promotion">
+              <div class="tl-when">As soon as you confirm</div>
+              <div class="tl-title">Promotion starts</div>
+              <div class="tl-body">
+                <p>We announce your session on the Women in Power page on LinkedIn. We hold promotion until you have confirmed, so your name never goes out on something you are not ready for.</p>
+                <p><strong>Your part:</strong> reshare the post with a line of your own. Your network is the audience most likely to turn up. There is <a href="#promote">wording you can borrow</a> further down.</p>
+              </div>
+              <span class="tl-time">5 min</span>
+            </li>
+            <li data-label="Session day">
+              <div class="tl-when">Session day</div>
+              <div class="tl-title">You present</div>
+              <div class="tl-body">
+                <p>Join fifteen minutes early. A moderator opens the session, introduces you, and looks after the chat and the questions so you can think about one thing only.</p>
+                <p><strong>Your part:</strong> join from the invite, share your screen, and enjoy it. <a href="#day">More on the day itself.</a></p>
+              </div>
+              <span class="tl-time">45 min, plus 15 early</span>
+            </li>
+            <li data-label="Afterward">
+              <div class="tl-when">Afterward</div>
+              <div class="tl-title">The thank-you</div>
+              <div class="tl-body">
+                <p>You get a note from us, and the recording goes out to the community.</p>
+                <p><strong>Your part:</strong> send us your slides or links if you would like them shared, and put the talk on your LinkedIn profile. It counts.</p>
+              </div>
+              <span class="tl-time">10 min</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- =============================== NEED ============================ -->
