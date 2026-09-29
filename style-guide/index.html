@@ -63,8 +63,10 @@
           <a href="../">Home</a>
           <a href="../about/">About us</a>
           <a href="../mentoring/">Mentoring</a>
-          <a href="../mentoring/2026-cohort2/">Cohort 2</a>
+          <a href="../mentoring/2026-fall/">Fall 2026</a>
           <a href="../mentoring/mentorship-prompts/">Prompt Pack</a>
+          <a href="../skilling/">Skilling</a>
+          <a href="../skilling/speaker-guide/">Speaker guide</a>
           <a href="./" aria-current="page">Style guide</a>
         </nav>
         <button type="button" class="theme-toggle" data-theme-toggle>Theme</button>
@@ -73,7 +75,7 @@
     <p class="kicker">Internal reference</p>
     <h1>The Women in Power style guide</h1>
     <p class="standfirst">One stylesheet, one voice. Everything a WiP member page needs to look like it belongs to us, and a set of rules loose enough to keep growing.</p>
-    <p class="meta"><span>Version <strong>3.0</strong></span><span>Updated <strong>16 September 2026</strong></span><span>Owner <strong>Sravani Seethi</strong></span></p>
+    <p class="meta"><span>Version <strong>3.1</strong></span><span>Updated <strong>28 September 2026</strong></span><span>Owner <strong>Sravani Seethi</strong></span></p>
   </div>
 </header>
 
@@ -150,9 +152,10 @@
 
     <div class="code">/                              Women in Power: overview
 &#9500;&#9472;&#9472; /mentoring/                <span class="t">pillar 1</span>
-&#9474;     &#9500;&#9472;&#9472; 2026-cohort2/
+&#9474;     &#9500;&#9472;&#9472; 2026-fall/
 &#9474;     &#9492;&#9472;&#9472; mentorship-prompts/
-&#9500;&#9472;&#9472; /skilling/                 <span class="t">pillar 2, not built yet</span>
+&#9500;&#9472;&#9472; /skilling/                 <span class="t">pillar 2</span>
+&#9474;     &#9492;&#9472;&#9472; speaker-guide/
 &#9500;&#9472;&#9472; /networking/               <span class="t">pillar 3, not built yet</span>
 &#9492;&#9472;&#9472; /about/                    <span class="t">site-level, not a pillar</span></div>
 
@@ -160,7 +163,7 @@
     <div class="grid grid-2" style="margin-top:var(--s-4)">
       <div class="card">
         <h4>Primary: the masthead</h4>
-        <p class="small muted"><strong>Pages you can open come first</strong>: Mentoring, then About. Pillars with no page yet sit after them, quiet and unlinked. Identical on every page, and it does not grow when a pillar gains a page: Skilling simply turns from a placeholder into a link, in place.</p>
+        <p class="small muted"><strong>Pillars first, then About, then what is not built yet</strong>: Mentoring, Skilling, About us, and Networking as a quiet placeholder. Identical on every page. It does not grow when a pillar gains a page: the placeholder turns into a link where it stands, which is what happened to Skilling on 28 Sep 2026.</p>
       </div>
       <div class="card">
         <h4>Secondary: the sub-nav</h4>
@@ -171,18 +174,20 @@
     <h3 style="margin-top:var(--s-6)">Rules</h3>
     <ul class="rule-list">
       <li><strong>A new page belongs to a pillar.</strong> If it does not fit under Mentoring, Skilling or Networking, that is a sign it needs its own pillar, or that it should not be a page.</li>
-      <li><strong>The primary nav stays three items.</strong> Cohort 2 and the Prompt Pack are Mentoring pages, so they belong in the sub-nav, not the masthead. That is what keeps the top level readable as Skilling and Networking arrive.</li>
+      <li><strong>The primary nav stays at pillar level.</strong> The cohort page, the Prompt Pack and the speaker guide are pages inside a pillar, so they belong in a sub-nav, not the masthead. Four items is the ceiling: three pillars and About.</li>
       <li><strong>Pillars without pages say so, quietly, and last.</strong> A <code>.nav-soon</code> span, not a link: a nav item that 404s is worse than one that admits it is not ready. But a placeholder must never outrank a page someone can actually open, so real links lead and the badge styling stays understated. Two greyed items sitting between live links is how a nav starts reading as mostly broken.</li>
       <li><strong>The logo goes home</strong>, to the overview, never to a section page.</li>
       <li><strong>The sub-nav is never sticky.</strong> The cohort page already has a sticky in-page jump bar; two stacked sticky strips eat a phone screen.</li>
     </ul>
 
-    <h3 style="margin-top:var(--s-6)">Adding the Skilling pillar</h3>
+    <h3 style="margin-top:var(--s-6)">Adding the Networking pillar</h3>
+    <p class="small muted">This is the recipe Skilling went through on 28 Sep 2026. Networking is the one still to come.</p>
     <ol class="steps">
-      <li>Create <code>skilling/index.html</code> from any existing page as a starting point.</li>
-      <li>In <strong>every</strong> page&rsquo;s masthead, swap <code>&lt;span class="nav-soon"&gt;Skilling &lt;em&gt;soon&lt;/em&gt;&lt;/span&gt;</code> for a real link at the right relative depth.</li>
-      <li>If Skilling gains a second page, add a sub-nav to it with <code>subnav-label</code> set to &ldquo;Skilling&rdquo;.</li>
-      <li>Update the pillar card on the overview page, and the table in the README.</li>
+      <li>Create <code>networking/index.html</code> from <code>skilling/index.html</code>, which is the closest thing to a template: masthead, sub-nav, jump bar, footer, all at one level of depth.</li>
+      <li>In <strong>every</strong> page&rsquo;s masthead, swap <code>&lt;span class="nav-soon"&gt;Networking &lt;em&gt;soon&lt;/em&gt;&lt;/span&gt;</code> for a real link at the right relative depth. It goes where the placeholder stood.</li>
+      <li>Add a sub-nav once the pillar has a second page, with <code>subnav-label</code> set to the pillar name.</li>
+      <li>Add a line to every page&rsquo;s footer nav, update the pillar card on the overview page, and update the table in the README.</li>
+      <li>Bump the version here and add a change-log row.</li>
     </ol>
   </section>
 
@@ -455,7 +460,7 @@
     <p><strong>Cormorant Garamond</strong> for headings, names and big numerals: an editorial serif with fine contrast, and most of the site&rsquo;s elegance. <strong>Jost</strong> for the small uppercase labels, buttons and UI. <strong>Inter</strong> for body text, for readability. Cormorant runs small, so every rule that sets it also sets <code>font-size-adjust: var(--serif-adjust)</code>; keep that pairing when you add one. Numbers use lining figures site-wide. Each face falls back to a system font (Georgia, Segoe UI), so a page still reads correctly if webfonts fail.</p>
 
     <div class="demo" style="margin-top:var(--s-4)">
-      <div class="type-row"><span class="lbl">--t-3xl &middot; h1</span><span style="font-family:var(--font-serif);font-size-adjust:var(--serif-adjust);font-weight:600;font-size:var(--t-3xl);color:var(--heading);line-height:1.08">Cohort 2 starts <em style="color:var(--rose);font-weight:500">24 September</em></span></div>
+      <div class="type-row"><span class="lbl">--t-3xl &middot; h1</span><span style="font-family:var(--font-serif);font-size-adjust:var(--serif-adjust);font-weight:600;font-size:var(--t-3xl);color:var(--heading);line-height:1.08">The Fall cohort starts <em style="color:var(--rose);font-weight:500">24 September</em></span></div>
       <div class="type-row"><span class="lbl">--t-2xl &middot; h2</span><span style="font-family:var(--font-serif);font-size-adjust:var(--serif-adjust);font-weight:600;font-size:var(--t-2xl);color:var(--heading)">Your mentee journey</span></div>
       <div class="type-row"><span class="lbl">--t-xl &middot; h3</span><span style="font-family:var(--font-serif);font-size-adjust:var(--serif-adjust);font-weight:600;font-size:var(--t-xl);color:var(--heading)">What you walk away with</span></div>
       <div class="type-row"><span class="lbl">--t-lg &middot; lead</span><span class="lead">Twelve weeks, about an hour a week, and you leave having spoken in front of the group.</span></div>
@@ -635,7 +640,7 @@
           <span class="subnav-label">Mentoring</span>
           <ul>
             <li><a href="#components">Overview</a></li>
-            <li><a href="#components" aria-current="page">Cohort 2</a></li>
+            <li><a href="#components" aria-current="page">Fall 2026</a></li>
             <li><a href="#components">Prompt Pack</a></li>
           </ul>
         </div>
@@ -653,7 +658,7 @@
     <p class="small muted" style="margin-top:var(--s-3)">Use <code>wrap-wide</code> instead of <code>wrap</code> on pages whose main content is wide, so the sub-nav lines up with the columns beneath it.</p>
 
     <h3 style="margin-top:var(--s-5)">Journey explorer</h3>
-    <p class="small muted">The interactive walkthrough on the cohort page: a reader picks a tier and a role, then steps through the milestones. Live example: <a href="../mentoring/2026-cohort2/#journey">Cohort 2 &rarr; Your journey</a>.</p>
+    <p class="small muted">The interactive walkthrough on the cohort page: a reader picks a tier and a role, then steps through the milestones. Live example: <a href="../mentoring/2026-fall/#journey">Fall 2026 &rarr; Your journey</a>.</p>
     <div class="callout" style="margin-top:var(--s-3)">
       <p class="callout-title">How it is built</p>
       <ul class="small" style="margin-top:var(--s-2)">
@@ -769,6 +774,7 @@
           <tr><td>2.0</td><td>12 Sep 2026</td><td><strong>Bloom.</strong> Warm neutrals (ivory, plum-black ink, aubergine headings), a warm dark theme, Fraunces serif headings with an optional rose-italic warm word, an original line-drawn bloom motif (masthead, section dividers, <code>.panel-bloom</code>, <code>.card-bloom</code>), plum masthead and solid buttons, plum-tinted shadows, softer radii. Also fixed bold text disappearing on dark bands in light mode.</td></tr>
           <tr><td>2.1</td><td>14 Sep 2026</td><td><strong>No em dashes.</strong> Plain-language guidance (Canada.ca) says to use a comma or simplify instead. Screen readers are inconsistent: JAWS reads it aloud as &ldquo;em dash&rdquo; and NVDA runs straight through it, so clauses blur together. Many readers now take heavy em-dash use as a sign of AI-written text. Replaced across all pages with commas, colons, parentheses or new sentences.</td></tr>
           <tr><td>2.2</td><td>15 Sep 2026</td><td>Community described as <strong>Power Platform and AI tools</strong>, not Power Platform alone. About leadership heading is now &ldquo;Meet the troublemakers&rdquo;. Pages no longer state that nobody is paid; they describe the work as volunteer-led instead.</td></tr>
+          <tr><td>3.1</td><td>28 Sep 2026</td><td><strong>The Skilling pillar.</strong> <code>skilling/</code> and <code>skilling/speaker-guide/</code> published, so the masthead nav is Mentoring, Skilling, About us, Networking (soon). The Fall 2026 cohort page moved from <code>mentoring/2026-cohort2/</code> to <code>mentoring/2026-fall/</code>, with a meta-refresh stub left at the old address. Named cohorts by season, not by number, everywhere.</td></tr>
           <tr><td>3.0</td><td>16 Sep 2026</td><td><strong>Motion and type.</strong> Cormorant Garamond headings with Jost labels, lining figures. Arch portraits. Quiet motion: scroll reveals, the corner bloom on every row of equals (unfurls on arrival), self-drawing section dividers, a pen stroke under the headline warm word, drawn link underlines, nudging arrows, cross-page fades. All of it respects reduced motion.</td></tr>
           <tr><td>1.8</td><td>8 Sep 2026</td><td>PPCC 2026 event page. Announcement bar component. Two new ribbon tokens after finding the bright ribbon fails contrast behind and inside text: cyan 2.06:1 on white, violet 2.81:1 on dark.</td></tr>
           <tr><td>1.7</td><td>5 Sep 2026</td><td>Nav ordered so live pages lead and placeholders follow, with quieter "soon" styling. Heading and no-JS fixes on the cohort page.</td></tr>
@@ -796,9 +802,10 @@
     </div>
     <nav aria-label="Footer">
       <a href="../mentoring/">Mentoring</a>
-      <a href="../mentoring/2026-cohort2/">AMPLIFY: Cohort 2</a>
+      <a href="../mentoring/2026-fall/">AMPLIFY: Fall 2026</a>
       <a href="../">Women in Power</a>
       <a href="../mentoring/mentorship-prompts/">Mentor-Ask Prompt Pack</a>
+      <a href="../skilling/">Skilling Series</a>
       <a href="https://www.linkedin.com/company/women-in-power-platform" target="_blank" rel="noopener">Women in Power on LinkedIn</a>
     </nav>
   </div>

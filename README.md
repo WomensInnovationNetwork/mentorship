@@ -12,8 +12,10 @@ Published with GitHub Pages from `main` at
 |---|---|---|
 | `index.html` | [`/`](https://womensinnovationnetwork.github.io/wip/) | Women in Power overview — who we are, what we do |
 | `mentoring/` | [`/mentoring/`](https://womensinnovationnetwork.github.io/wip/mentoring/) | What mentoring is, five cohorts of track record, the AMPLIFY tracks |
-| `mentoring/2026-cohort2/` | [`/mentoring/2026-cohort2/`](https://womensinnovationnetwork.github.io/wip/mentoring/2026-cohort2/) | AMPLIFY Cohort 2, Fall 2026 — Power Hour schedule, tracks, journeys |
+| `mentoring/2026-fall/` | [`/mentoring/2026-fall/`](https://womensinnovationnetwork.github.io/wip/mentoring/2026-fall/) | AMPLIFY, the Fall 2026 cohort — Power Hour schedule, tracks, journeys |
 | `mentoring/mentorship-prompts/` | [`/mentoring/mentorship-prompts/`](https://womensinnovationnetwork.github.io/wip/mentoring/mentorship-prompts/) | Mentor-Ask Prompt Pack (originally EPPC 2026) |
+| `skilling/` | [`/skilling/`](https://womensinnovationnetwork.github.io/wip/skilling/) | The Skilling Series — what it is, the fall plan, the December advent calendar, the session archive |
+| `skilling/speaker-guide/` | [`/skilling/speaker-guide/`](https://womensinnovationnetwork.github.io/wip/skilling/speaker-guide/) | For people speaking in the series: the six steps, the day itself, a first-talk package |
 | `ppcc-2026/` | [`/ppcc-2026/`](https://womensinnovationnetwork.github.io/wip/ppcc-2026/) | Women in Power at the Power Platform Community Conference, Oct 2026 |
 | `about/` | [`/about/`](https://womensinnovationnetwork.github.io/wip/about/) | Leadership, and the community roll |
 | `style-guide/` | [`/style-guide/`](https://womensinnovationnetwork.github.io/wip/style-guide/) | Living style guide. **Maintainers only; not linked from member pages.** |
@@ -25,38 +27,45 @@ Three pillars at the top level. Everything else lives inside one of them.
 ```
 /                              Women in Power — overview
 ├── /mentoring/                pillar 1
-│     ├── 2026-cohort2/
+│     ├── 2026-fall/
 │     └── mentorship-prompts/
-├── /skilling/                 pillar 2 — not built yet
+├── /skilling/                 pillar 2
+│     └── speaker-guide/
 ├── /networking/               pillar 3 — not built yet
 └── /about/                    site-level, not a pillar
 ```
 
 Two levels of navigation carry this:
 
-- **Primary (masthead)** — pages you can open first (Mentoring, About), then
-  pillars with no page yet, quiet and unlinked. It does not grow when a pillar
-  gains a page: Skilling turns from placeholder into link, in place.
+- **Primary (masthead)** — pillars first, then About, then pillars with no page
+  yet, quiet and unlinked: Mentoring, Skilling, About us, Networking (soon). It
+  does not grow when a pillar gains a page: the placeholder turns into a link
+  where it stands, which is what Skilling did on 28 Sep 2026.
 - **Secondary (`.subnav`)** — appears on pages *inside* a pillar and lists
   that pillar's pages, labelled with the pillar name.
 
-Cohort 2 and the Prompt Pack are Mentoring pages, so they belong in the
-sub-nav, not the masthead. That is what keeps the top level readable once
-Skilling and Networking arrive.
+The cohort page, the Prompt Pack and the speaker guide sit inside a pillar, so
+they belong in a sub-nav, not the masthead. Four items is the ceiling up there:
+three pillars and About.
 
 Pillars without pages render as `.nav-soon` spans, not links — a nav item that
 404s is worse than one that admits it is not ready. They sit *after* the real
 links and stay visually quiet: a placeholder must never outrank a page someone
 can actually open.
 
-### Adding the Skilling pillar
+### Adding the Networking pillar
 
-1. Create `skilling/index.html` from any existing page.
-2. In **every** page's masthead, swap the `<span class="nav-soon">Skilling…`
-   for a real link at the right relative depth.
-3. If Skilling gains a second page, add a `.subnav` with its label set to
-   "Skilling".
-4. Update the pillar card on the overview page and the table above.
+Skilling went through this on 28 Sep 2026; Networking is the one still to come.
+
+1. Create `networking/index.html` from `skilling/index.html` — the closest
+   thing to a template, and already at one level of depth.
+2. In **every** page's masthead, swap the `<span class="nav-soon">Networking…`
+   for a real link at the right relative depth. It goes where the placeholder
+   stood.
+3. Add a `.subnav` once the pillar has a second page, labelled with the pillar
+   name.
+4. Add a line to every footer nav, update the pillar card on the overview page,
+   and update the table above.
 
 Section 02 of the style guide has the same rules with examples.
 
@@ -73,9 +82,12 @@ file, commit, and GitHub Pages publishes it.
 │   └── img/               ← logos (see img/README.md for what's still needed)
 ├── style-guide/           ← documents and previews everything in wip.css
 ├── index.html             ← Women in Power overview (site root)
-└── mentoring/
-    ├── 2026-cohort2/
-    └── mentorship-prompts/
+├── mentoring/
+│   ├── 2026-fall/
+│   ├── 2026-cohort2/      ← meta-refresh stub only; the cohort page moved
+│   └── mentorship-prompts/
+└── skilling/
+    └── speaker-guide/
 ```
 
 ### Light and dark
@@ -114,14 +126,14 @@ full. To add a journey, add a `.je-journey` block; no JavaScript changes.
 python -m http.server 8000
 ```
 
-Then open `http://localhost:8000/mentoring/2026-cohort2/`.
+Then open `http://localhost:8000/mentoring/2026-fall/`.
 
 Before merging, check: 320px width, 200% browser zoom, keyboard tab order,
 **both light and dark**, and print preview (people print the cohort calendar).
 
 ## Audiences
 
-`index.html` and `mentoring/**` are **member-facing** — mentors and mentees. `style-guide/`
+`index.html`, `mentoring/**` and `skilling/**` are **member-facing** — mentors and mentees. `style-guide/`
 is **maintainers only**: it is `noindex`ed and must stay unlinked from every
 member page. Don't add it to a member masthead or footer.
 
@@ -167,6 +179,36 @@ Two rules that are not negotiable:
 Leadership roles on the page came from the Feb 2026 planning assignments, which
 the source document notes have **not** been re-confirmed for FY27. Validate
 before treating the page as authoritative.
+
+## The Skilling pages
+
+`skilling/` is the member-facing cut of two internal documents: the Skilling
+Committee's 2026 progress-and-plan dashboard and the speaker guide. The long
+comment at the top of `skilling/index.html` lists what was deliberately left
+off, and why. The short version:
+
+- **No attendance numbers.** A page that advertises how few people came to a
+  session is an argument against attending it.
+- **No bench list.** Nobody should learn from a web page that they were the
+  backup.
+- **No open decisions**, no unscheduled-talk counts, no speaker contact details.
+- **No speaker names for a session that has not been announced.** The series
+  promises a speaker that her name goes out only once she has confirmed, and the
+  page has to keep that promise. Themes are the committee's own framing, so they
+  are safe; the line-up is not.
+- **No per-speaker "first-time speaker" flag.** The aggregate share is a good
+  number to publish. Labelling a named woman as inexperienced next to her own
+  talk is not.
+
+Two parts of that page are **dated** and will go stale: the fall plan under
+"What's on" and the December advent calendar. Replace them with the next season
+rather than leaving them up. The session list under "This season" is the public
+archive — add a row once a session has run, and only for sessions that were
+publicly announced.
+
+The speaker guide has no contact email: the source document has a placeholder
+where one should be. Every "contact us" on the page points at LinkedIn instead.
+When there is an address to publish, put it in the FAQ only, not in six places.
 
 ## The PPCC 2026 page
 

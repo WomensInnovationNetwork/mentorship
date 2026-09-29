@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skilling | Women in Power</title>
+<meta name="description" content="The Women in Power Skilling Series: free 45-minute sessions on Power Platform and AI tools, plus a monthly Power Skills session on career and visibility. Open to everyone, always recorded.">
+<meta name="theme-color" content="#3b0b4e">
+<script>(function(){try{var t=localStorage.getItem('wip-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<script>document.documentElement.classList.add('rv-on');setTimeout(function(){if(!window.WIP_REVEAL)document.documentElement.classList.remove('rv-on');},3000);</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500..700;1,500..700&family=Inter:wght@400;500;600&family=Jost:wght@400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/wip.css">
+<style>
+  /* Page-specific. Promote into wip.css only if a second page needs it. */
+
+  /* A month of the series: theme on top, the weeks beneath it. */
+  .months { display: grid; gap: var(--s-4); }
+  @media (min-width: 820px) { .months { grid-template-columns: 1fr 1fr; } }
+  .month .m-when {
+    font-family: var(--font-display); font-size: var(--t-xs); font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase; color: var(--accent);
+  }
+  .month h3 { margin-top: var(--s-2); font-size: var(--t-xl); letter-spacing: -.015em; }
+  .weeks { list-style: none; padding: 0; margin: var(--s-4) 0 0; display: grid; gap: var(--s-2); }
+  .weeks li { margin: 0; background: var(--surface-2); border: 1px solid var(--line);
+              border-radius: var(--r-md); padding: var(--s-3) var(--s-4); }
+  /* Both spans are block: side by side they run together as one sentence. */
+  .weeks .w { display: block; font-family: var(--font-display); font-size: var(--t-xs); font-weight: 700;
+              letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+  .weeks .f { display: block; font-family: var(--font-serif); font-size-adjust: var(--serif-adjust);
+              font-weight: 600; font-size: 1.05rem; color: var(--heading); margin-top: 2px; }
+
+  /* The advent doors. One card per kind of door, not one per day: 24 tiles
+     would be a calendar nobody reads, and the rhythm is the point. */
+  .doors { display: grid; gap: var(--s-3); margin-top: var(--s-5); }
+  @media (min-width: 640px) { .doors { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .doors { grid-template-columns: repeat(3, 1fr); } }
+  .door { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16);
+          border-radius: var(--r-md); padding: var(--s-4); }
+  .door .day {
+    font-family: var(--font-display); font-size: var(--t-xs); font-weight: 700;
+    letter-spacing: .12em; text-transform: uppercase; color: #f7b3cf;
+  }
+  .door h4 { margin-top: var(--s-2); color: #fff; }
+  .door p { font-size: 0.9375rem; color: rgba(255,255,255,.78); margin-top: var(--s-2); }
+  .door .n {
+    display: inline-block; margin-top: var(--s-3); font-size: var(--t-xs);
+    color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.22);
+    border-radius: var(--r-pill); padding: .2em .8em;
+    font-variant-numeric: lining-nums;
+  }
+
+  /* Reuses .spotlight from the cohort page. Two pages now, so it is a
+     candidate for wip.css the next time a third one wants it. */
+  .spotlight {
+    background:
+      var(--bloom-rose) right -60px top -60px / 220px 220px no-repeat,
+      radial-gradient(700px 300px at 85% -40%, var(--mast-glow-1), transparent 62%),
+      linear-gradient(150deg, var(--mast-a) 0%, var(--mast-b) 100%);
+    color: #fff; border-radius: var(--r-xl); padding: var(--s-6);
+    position: relative; overflow: hidden; border: 1px solid var(--line);
+  }
+  .spotlight h2, .spotlight h3, .spotlight h4 { color: #fff; }
+  .spotlight p, .spotlight li { color: rgba(255,255,255,.82); }
+  .spotlight .eyebrow { color: #f7b3cf; }
+  .spotlight strong { color: #fff; }
+  .spotlight::after { content: ""; position: absolute; inset: auto 0 0 0; height: 4px; background: var(--ribbon); }
+
+  /* The session archive. .event comes from wip.css; this is the list frame. */
+  .sessions { list-style: none; padding: 0; margin: 0; }
+  .sessions > li { margin: 0; padding: var(--s-4) 0; border-top: 1px solid var(--line-soft); }
+  .sessions > li:first-child { border-top: 0; padding-top: 0; }
+  .event-body h4 { font-size: 1.0625rem; }
+  .event-speaker { font-size: var(--t-sm); color: var(--ink-2); margin-top: 4px; }
+
+  @media print {
+    .spotlight { background: #fff; color: #000; border: 1px solid #ccc; padding: 0; }
+    .spotlight h2, .spotlight h3, .spotlight h4 { color: #000; }
+    .spotlight p, .spotlight li { color: #222; }
+    .spotlight .eyebrow { color: #3b0b4e; }
+    .door { border-color: #ccc; }
+    .door h4 { color: #000; }
+    .door p, .door .day, .door .n { color: #333; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="announce">
+  <a href="../ppcc-2026/">
+    <span>Women in Power is at PPCC 2026, all three days</span>
+    <span class="where">MGM Grand, Las Vegas &middot; 27&ndash;29 October</span>
+    <span class="go">See the program &rarr;</span>
+  </a>
+</div>
+
+<header class="masthead" id="top">
+  <div class="wrap">
+    <div class="masthead-top">
+      <a class="lockup" href="../">
+        <img class="lockup-img" src="../assets/img/wip-wordmark-reverse.png" alt="Women in Power" width="1200" height="607">
+      </a>
+      <div class="masthead-right">
+        <nav class="masthead-nav" aria-label="Main">
+          <a href="../mentoring/">Mentoring</a>
+          <a href="./" aria-current="page">Skilling</a>
+          <a href="../about/">About us</a>
+          <span class="nav-soon">Networking <em>soon</em></span>
+        </nav>
+        <button type="button" class="theme-toggle" data-theme-toggle>Theme</button>
+      </div>
+    </div>
+    <p class="kicker">Skilling</p>
+    <h1>Nobody was <em>born</em> knowing this.</h1>
+    <p class="standfirst">The Skilling Series: short, practical sessions on Power Platform and AI tools, taught by people in this community. Free, open to everyone, and always recorded.</p>
+    <p class="meta">
+      <span>Sessions <strong>twice a week through the fall</strong></span>
+      <span>Length <strong>about 45 minutes</strong></span>
+      <span>Cost <strong>nothing but the time</strong></span>
+    </p>
+    <p class="row" style="margin-top:var(--s-5)">
+      <a class="btn btn-accent" href="https://www.linkedin.com/company/women-in-power-platform" target="_blank" rel="noopener">Sessions are announced on LinkedIn &rarr;</a>
+      <a class="btn btn-ghost" href="speaker-guide/">Speak in the series</a>
+    </p>
+  </div>
+</header>
+
+<nav class="subnav" aria-label="Skilling section">
+  <div class="wrap">
+    <span class="subnav-label">Skilling</span>
+    <ul>
+        <li><a href="./" aria-current="page">Overview</a></li>
+        <li><a href="speaker-guide/">Speaker guide</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="jump">
+  <div class="wrap">
+    <ul>
+      <li><a href="#what">What it is</a></li>
+      <li><a href="#whats-on">What&rsquo;s on</a></li>
+      <li><a href="#december">December</a></li>
+      <li><a href="#this-season">This season</a></li>
+      <li><a href="#speak">Speak</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </div>
+</div>
+
+<main id="main">
+<div class="wrap">
+
+  <!--
+    ======================================================================
+    WHERE THIS PAGE COMES FROM, AND WHAT WAS LEFT OFF IT
+
+    Source: the Skilling Committee's 2026 progress and plan document
+    (17 Sep 2026) and the speaker guide. Both are internal working
+    documents. This page is the member-facing cut of them, and the things
+    below were left off deliberately. Do not add them back.
+
+    * Attendance numbers. The committee's own figures are estimates, and a
+      page that advertises how few people came to a session is an argument
+      against attending it.
+    * The bench list of speakers held in reserve. Nobody should learn from
+      a web page that they were the backup.
+    * The pool of talks that were offered but not scheduled, and the count
+      of speakers who still need to re-confirm. That is scheduling work in
+      progress, not news.
+    * The committee's open decisions, and anything framed as "needs
+      approval". Unconfirmed decisions do not go on member pages.
+    * Speaker contact details, and the per-speaker "first-time speaker"
+      flag. The aggregate share is a good number to publish; labelling a
+      named woman as inexperienced next to her own talk is not.
+    * October and November speaker names and session titles. The series
+      promises a speaker that her name goes out only once she has
+      confirmed (see the speaker guide). The themes below are the
+      committee's own framing, so they are safe to publish; the line-up is
+      not, until she says yes.
+
+    UPDATING THIS PAGE
+    * The fall plan is dated. When December ends, replace the "What's on"
+      and "December" sections with the next season rather than letting
+      them go stale.
+    * The session list under "This season" is the public archive. Add a
+      row once a session has run. Only sessions that were publicly
+      announced belong there.
+    * TODO: no link to the recordings yet. When there is a place members
+      can browse them, link it from "This season" and from the FAQ.
+    ======================================================================
+  -->
+
+  <!-- ============================== WHAT ============================= -->
+  <section class="section" id="what">
+    <div class="section-head">
+      <p class="eyebrow">What it is</p>
+      <h2>Forty-five minutes, and something you can use on Monday</h2>
+    </div>
+    <p class="lead">One session, one topic, taught by someone who uses it. About thirty minutes of talk and demo, then ten to fifteen minutes of questions. You can come with the camera off and say nothing at all.</p>
+    <p>There are two kinds of session, and both are open to everyone. You do not need to be in a mentoring cohort, and you do not need to work at Microsoft.</p>
+
+    <div class="grid grid-2" style="margin-top:var(--s-5)">
+      <div class="card card-t1">
+        <h3 style="margin:0">Skilling sessions</h3>
+        <p>The technical ones. Power Apps, Power Automate, Power BI, Dataverse, Copilot Studio and agents, and whatever else the community is actually building with: GitHub Copilot, security, governance, Azure.</p>
+        <p class="small muted">Most sessions are pitched at beginner or intermediate. If a topic assumes something, the announcement says so.</p>
+      </div>
+      <div class="card card-t2">
+        <h3 style="margin:0">Power Skills</h3>
+        <p>Once a month, the other half of a career: being visible, speaking up in technical rooms, asking for what you are worth, getting your work seen.</p>
+        <p class="small muted">Power skills, not soft skills. They draw our largest rooms, which tells you something.</p>
+      </div>
+    </div>
+
+    <div class="grid grid-4" style="margin-top:var(--s-5)">
+      <div class="stat"><div class="stat-num">59</div><div class="stat-label">talks offered in twenty days, when we asked</div></div>
+      <div class="stat"><div class="stat-num">37%</div><div class="stat-label">of them from someone who had never spoken before</div></div>
+      <div class="stat"><div class="stat-num">6</div><div class="stat-label">continents the speakers write in from</div></div>
+      <div class="stat"><div class="stat-num">50+</div><div class="stat-label">women have given their first talk on this stage</div></div>
+    </div>
+
+    <div class="callout" style="margin-top:var(--s-5)">
+      <p class="callout-title">How to get to one</p>
+      <p>Every session is announced on the <a href="https://www.linkedin.com/company/women-in-power-platform" target="_blank" rel="noopener">Women in Power page on LinkedIn</a> with the joining link. Follow the page and you will not miss one.</p>
+      <p class="small muted">Session times rotate so that India, Europe and the Americas each get a workable slot, and every session is recorded. A bad time zone is not a reason to give up on a topic you want.</p>
+    </div>
+  </section>
+
+  <!-- ============================= WHAT'S ON ========================= -->
+  <section class="section" id="whats-on">
+    <div class="section-head">
+      <p class="eyebrow">The rest of the year</p>
+      <h2>October is about <em>agents</em>. November puts them to work.</h2>
+    </div>
+    <p class="lead">Two sessions most weeks, on Tuesday and Thursday, plus one Power Skills session a month. Nothing runs in US Thanksgiving week.</p>
+
+    <div class="months" style="margin-top:var(--s-5)">
+      <div class="card card-bloom month">
+        <p class="m-when">October</p>
+        <h3>Copilot Studio and AI agents</h3>
+        <p class="small muted">Four weeks, start to finish: build one, make it good, make it real, then ship it without frightening your IT team.</p>
+        <ul class="weeks">
+          <li><span class="w">Week of 6 Oct</span><span class="f">Build your first agent</span></li>
+          <li><span class="w">Week of 13 Oct</span><span class="f">Go deeper: flows and memory</span></li>
+          <li><span class="w">Week of 20 Oct</span><span class="f">Agents doing real work</span></li>
+          <li><span class="w">Week of 27 Oct</span><span class="f">Ship it, and govern it</span></li>
+        </ul>
+      </div>
+      <div class="card card-bloom month">
+        <p class="m-when">November</p>
+        <h3>Agents at work, Copilot and governance</h3>
+        <p class="small muted">Less first steps, more what happens after: agents in a real business process, Copilot in the working day, and keeping the whole thing governed.</p>
+        <ul class="weeks">
+          <li><span class="w">Week of 3 Nov</span><span class="f">Agents in the business</span></li>
+          <li><span class="w">Week of 10 Nov</span><span class="f">Copilot for everyday work</span></li>
+          <li><span class="w">Week of 17 Nov</span><span class="f">Governance and automation</span></li>
+          <li><span class="w">Week of 24 Nov</span><span class="f">Nothing: Thanksgiving week</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:var(--s-4)">
+      <p class="callout-title">Why there are no names here yet</p>
+      <p>Dates, titles and speakers go out on LinkedIn as each speaker confirms. We hold a session back until she is ready for her name to be on it, so this page shows the shape of the season and LinkedIn shows the line-up.</p>
+    </div>
+  </section>
+
+  <!-- ============================= DECEMBER ========================== -->
+  <section class="section" id="december">
+    <div class="spotlight">
+      <p class="eyebrow">December</p>
+      <h2 style="margin-top:var(--s-2)">A skilling advent calendar</h2>
+      <p class="lead" style="color:rgba(255,255,255,.88);max-width:62ch">December is a hard month to hold a live session in. So the series swaps them for <strong>one door a day, 1 to 24 December</strong>, on the Women in Power page on LinkedIn. Open them whenever you like.</p>
+      <p style="max-width:62ch">Every day of the week has a job, so you learn the rhythm after the first week and know what is coming.</p>
+
+      <div class="doors">
+        <div class="door">
+          <p class="day">Mon, Tue, Thu</p>
+          <h4>Tech tip</h4>
+          <p>One practical thing you can try that day. Agents, then Power Apps and Automate, then Power BI and Copilot at work, then governance.</p>
+          <p class="n">10 doors</p>
+        </div>
+        <div class="door">
+          <p class="day">Wednesday</p>
+          <h4>Power Skills</h4>
+          <p>Getting your work seen, speaking up in technical rooms, going from a first talk to the next stage, and setting goals for 2027.</p>
+          <p class="n">4 doors</p>
+        </div>
+        <div class="door">
+          <p class="day">Friday</p>
+          <h4>Community day</h4>
+          <p>&ldquo;My first talk&rdquo;, with this year&rsquo;s first-time speakers. One open thread for whatever you are stuck on. And a vote on what 2027 should cover.</p>
+          <p class="n">3 doors</p>
+        </div>
+        <div class="door">
+          <p class="day">Saturday</p>
+          <h4>Showcase</h4>
+          <p>A member shows something she built: an app, an agent, a flow, a dashboard. A sixty-second screen recording is plenty. Nominate yourself or somebody else.</p>
+          <p class="n">3 doors</p>
+        </div>
+        <div class="door">
+          <p class="day">Sunday</p>
+          <h4>Shoutouts</h4>
+          <p>Certifications, first talks, new MVPs, new roles. Speakers one week, member wins the next, then the volunteers who ran all of it.</p>
+          <p class="n">3 doors</p>
+        </div>
+        <div class="door">
+          <p class="day">24 December</p>
+          <h4>The last door</h4>
+          <p>The 2027 call for speakers opens. If any of the month made you think &ldquo;I could do that&rdquo;, that is the door to walk through.</p>
+          <p class="n">1 door</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:var(--s-6)">Want a door?</h3>
+      <p style="max-width:62ch">A door is not a talk. A LinkedIn post, a short video, a template somebody can download, a carousel, a poll, or a link to something you have already published: any of it counts, and the committee adds the advent frame and posts it for you.</p>
+      <p style="max-width:62ch"><strong>Sign-ups open in late October</strong>, on the LinkedIn page, along with the form for nominating someone else&rsquo;s work for a showcase or a shoutout.</p>
+      <p class="row" style="margin-top:var(--s-5)">
+        <a class="btn btn-accent" href="https://www.linkedin.com/company/women-in-power-platform" target="_blank" rel="noopener">Follow the page for the sign-up &rarr;</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================== THIS SEASON ========================= -->
+  <section class="section" id="this-season">
+    <div class="section-head">
+      <p class="eyebrow">This season so far</p>
+      <h2>Where we have been this fall</h2>
+    </div>
+    <p class="lead">Six sessions since the middle of August, and three of them were somebody&rsquo;s first talk.</p>
+
+    <div class="card" style="margin-top:var(--s-5)">
+      <ul class="sessions">
+        <li>
+          <div class="event">
+            <div class="event-date"><div class="event-mon">Aug</div><div class="event-day">18</div></div>
+            <div class="event-body">
+              <h4>AI for Her: Creating Change with Power Apps and Copilot</h4>
+              <p class="event-speaker">Chanchal Deshwal</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="event">
+            <div class="event-date"><div class="event-mon">Aug</div><div class="event-day">20</div></div>
+            <div class="event-body">
+              <h4>Stay Current or Get Blocked: Version Control for Canvas Apps</h4>
+              <p class="event-speaker">Markus Franz</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="event">
+            <div class="event-date"><div class="event-mon">Aug</div><div class="event-day">25</div></div>
+            <div class="event-body">
+              <h4>Smart Organizational Contact Finder</h4>
+              <p class="event-speaker">Kruthika Gopinathan</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="event">
+            <div class="event-date"><div class="event-mon">Sep</div><div class="event-day">15</div></div>
+            <div class="event-body">
+              <h4>Power Automate in GCC High: Best Practices for SharePoint</h4>
+              <p class="event-speaker">Heather Seiter</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="event">
+            <div class="event-date"><div class="event-mon">Sep</div><div class="event-day">25</div></div>
+            <div class="event-body">
+              <h4>Influence Before Certainty: Growing Your Career in the Age of AI</h4>
+              <p class="event-speaker">Anuja Singhal and Femke Cornelissen <span class="pill pill-t2" style="margin-left:.4em">Power Skills</span></p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="event">
+            <div class="event-date"><div class="event-mon">Sep</div><div class="event-day">28</div></div>
+            <div class="event-body">
+              <h4>Misfit Magic: Why Office Scripts Are the Most Underused Tool</h4>
+              <p class="event-speaker">Reagan Schroer</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <p class="small muted">Every session is recorded, and the recording goes out to the community afterwards. If you missed one, ask on LinkedIn and we will point you at it.</p>
+  </section>
+
+  <!-- ============================== SPEAK ============================ -->
+  <section class="section" id="speak">
+    <div class="section-head">
+      <p class="eyebrow">Teach one</p>
+      <h2>You know something worth <em>forty-five</em> minutes</h2>
+    </div>
+    <p class="lead">You do not need to be an MVP, and you do not need a new idea. The thing you worked out last month, the thing you now do without thinking: somebody in this community is stuck on exactly that.</p>
+    <p>Three of the six sessions this season were somebody&rsquo;s first talk. That is not an accident, it is who we go looking for.</p>
+
+    <div class="grid grid-2" style="margin-top:var(--s-5)">
+      <div class="card card-bloom">
+        <h4>What we ask of you</h4>
+        <ul>
+          <li>A title, two or three sentences about it, and a short bio</li>
+          <li>Thirty minutes of talk, and ten to fifteen of questions</li>
+          <li>One reply to a check-in two weeks out</li>
+          <li>A reshare of the announcement post, in your own words</li>
+        </ul>
+      </div>
+      <div class="card card-bloom">
+        <h4>What we do for you</h4>
+        <ul>
+          <li>Set up the Teams event, and send the invite</li>
+          <li>Promote it, but never before you have confirmed</li>
+          <li>Put a moderator in the room to open, introduce and run the chat</li>
+          <li>Offer a dry run if you want one, and record the session so you can keep it</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="row" style="margin-top:var(--s-5)">
+      <a class="btn btn-accent" href="speaker-guide/">Read the speaker guide &rarr;</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/company/women-in-power-platform" target="_blank" rel="noopener">Follow us on LinkedIn</a>
+    </p>
+    <p class="small muted">The call for speakers opens once a year, and the next one opens on 24 December. If you want to contribute before then, the December doors take a post or a short video instead of a talk.</p>
+  </section>
+
+  <!-- =============================== FAQ ============================= -->
+  <section class="section" id="faq">
+    <div class="section-head">
+      <p class="eyebrow">Questions</p>
+      <h2>Before you ask</h2>
+    </div>
+    <details class="faq">
+      <summary>Is there a fee?</summary>
+      <p>No. The series is free, and it is run by volunteers around their full-time jobs. All it costs you is the forty-five minutes.</p>
+    </details>
+    <details class="faq">
+      <summary>Do I have to be in a mentoring cohort?</summary>
+      <p>No. The Skilling Series is open to everyone, whether or not you have ever joined anything else of ours. Plenty of people start here.</p>
+    </details>
+    <details class="faq">
+      <summary>The times never work for me.</summary>
+      <p>Times rotate deliberately, so that India, Europe and the Americas each get a workable slot across a season. Every session is recorded, so pick the topic and catch up afterwards.</p>
+    </details>
+    <details class="faq">
+      <summary>Do I have to work with Power Platform?</summary>
+      <p>No. Sessions cover Copilot and AI tools, GitHub Copilot, security, governance, Azure and careers as well. If you work near any of this, you will find something.</p>
+    </details>
+    <details class="faq">
+      <summary>Are the sessions recorded?</summary>
+      <p>Yes, all of them, and the recording is shared with the community afterwards.</p>
+    </details>
+    <details class="faq">
+      <summary>I have never given a talk. Can I still speak?</summary>
+      <p>Yes, and that is the point. More than fifty women have given their first technical talk in this series. The <a href="speaker-guide/">speaker guide</a> has a section written for exactly this, including an outline you can borrow and what to do if your demo breaks.</p>
+    </details>
+    <details class="faq">
+      <summary>Can I suggest a topic, or a speaker?</summary>
+      <p>Yes. The call for speakers is the formal route and it opens on 24 December, but you can suggest a topic or nominate somebody any time through the LinkedIn page. The December community day includes a vote on what 2027 should cover.</p>
+    </details>
+  </section>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-row">
+    <div>
+      <img class="win-logo" src="../assets/img/win-logo.png" alt="Women's Innovation Network (WIN)">
+      <p class="tagline">When women innovate, the future follows.</p>
+      <p class="small" style="margin-top:var(--s-2)">Women in Power is a program of the Women&rsquo;s Innovation Network.</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="../">Women in Power</a>
+      <a href="../about/">About us</a>
+      <a href="../mentoring/">Mentoring</a>
+      <a href="./">Skilling Series</a>
+      <a href="speaker-guide/">Speaker guide</a>
+      <a href="https://www.linkedin.com/company/women-in-power-platform" target="_blank" rel="noopener">Women in Power on LinkedIn</a>
+    </nav>
+  </div>
+</footer>
+
+<a class="to-top" href="#top" title="Back to top">
+  <span class="visually-hidden">Back to top</span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+</a>
+
+<script src="../assets/js/wip.js" defer></script>
+</body>
+</html>

@@ -901,7 +901,7 @@ details.faq p { color: var(--ink-2); font-size: 0.9375rem; }
    An interactive walkthrough of a mentor's or mentee's twelve weeks.
    Choose a tier and a role, then step through the milestones.
 
-   Markup contract (see 2026-cohort2/index.html):
+   Markup contract (see 2026-fall/index.html):
      .journey-explorer
        .je-controls   → two segmented controls (tier, role)
        .je-stage      → .je-rail (tablist of steps) + .je-panel (tabpanel)
