@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AMPLIFY, Fall 2026 | Women in Power Mentoring</title>
-<meta name="description" content="AMPLIFY, the Women in Power mentoring program. The Fall 2026 cohort runs Thursday 24 September to Wednesday 9 December 2026: a weekly Power Hour for everyone, plus Circuits or Power Pairs.">
+<meta name="description" content="AMPLIFY, the Women in Power mentoring program. The Fall 2026 cohort runs Thursday 24 September to Thursday 10 December 2026: a weekly Power Hour for everyone, plus Circuits or Power Pairs.">
 <meta name="theme-color" content="#3b0b4e">
 <script>(function(){try{var t=localStorage.getItem('wip-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <script>document.documentElement.classList.add('rv-on');setTimeout(function(){if(!window.WIP_REVEAL)document.documentElement.classList.remove('rv-on');},3000);</script>
@@ -47,6 +47,19 @@
   /* Not ".topic": that name is the global topic-chip pill in wip.css, and on a
      <td> it turns the cell into an inline-block pill and breaks the row. */
   td.wk-topic strong { color: var(--heading); font-family: var(--font-display); font-weight: 600; }
+  /* A recording link, for a session that has one. See the note in the markup. */
+  td.wk-topic .rec { display: block; font-size: var(--t-xs); margin-top: 3px; }
+
+  /* Sessions that have already happened. The class is added by the script at
+     the bottom of this page, from each row's own data-until, so the table ages
+     by itself instead of needing an edit every Thursday. With JavaScript off
+     nothing is greyed, which is the right way to fail: a plain, correct
+     schedule. --ink-3 holds 5.4:1 or better here in both themes, including on
+     the tinted .moment rows, so "done" still means readable. */
+  tbody tr.is-past td,
+  tbody tr.is-past td.wk-topic strong,
+  tbody tr.is-past td.read { color: var(--ink-3); }
+  .done-mark { color: var(--ok); font-weight: 700; margin-right: .3em; }
   td.read { color: var(--ink-3); font-style: italic; }
   tr.moment td { background: var(--joint-wash); }
 
@@ -97,7 +110,7 @@
     <h1>AMPLIFY</h1>
     <p class="standfirst">Twelve weeks, two ways to be mentored, built around what members ask for most: <strong>confidence</strong> and <strong>network</strong>.</p>
     <p class="meta">
-      <span>Runs <strong>Thu 24 Sep &ndash; Wed 9 Dec 2026</strong></span>
+      <span>Runs <strong>Thu 24 Sep &ndash; Thu 10 Dec 2026</strong></span>
       <span>Commitment <strong>about 90 minutes a week</strong></span>
       <span>Run by <strong>volunteer mentors</strong></span>
     </p>
@@ -148,8 +161,8 @@
     </div>
     <div class="keydates" style="margin-top:var(--s-4)">
       <div class="keydate"><div class="d">Thu 24 Sep</div><div class="l">Kickoff: Plug In, where you meet your Circuit or Power Pair. Time to be announced</div></div>
-      <div class="keydate"><div class="d">Wed 18 Nov</div><div class="l">Community Showcase Night, where members present</div></div>
-      <div class="keydate"><div class="d">Wed 9 Dec</div><div class="l">Graduation: The Power Hour Live</div></div>
+      <div class="keydate"><div class="d">Thu 19 Nov</div><div class="l">Community Showcase Night, where members present</div></div>
+      <div class="keydate"><div class="d">Thu 10 Dec</div><div class="l">Graduation: The Power Hour Live</div></div>
     </div>
   </section>
 
@@ -213,7 +226,7 @@
     </ol>
     <div class="callout" style="margin-top:var(--s-4)">
       <p class="callout-title">The time moves on purpose</p>
-      <p class="small">Sessions rotate between four slots, 8&nbsp;AM to 6&nbsp;PM Central, so nobody always misses it live. Every session is recorded and posted within 24 hours; watching within 48 counts as being there.</p>
+      <p class="small">Sessions rotate between five slots, 8&nbsp;AM to 4&nbsp;PM Central, so nobody always misses it live. Every session is recorded and posted within 24 hours; watching within 48 counts as being there.</p>
     </div>
   </section>
 
@@ -229,27 +242,40 @@
       <div class="card arc"><p class="wk">Weeks 10&ndash;12</p><h4>Launch &amp; Career Momentum</h4><p class="small muted">Get moving: resumes, interviews, and a plan for what comes next.</p></div>
     </div>
 
-    <div class="table-scroll" style="margin-top:var(--s-5)">
+    <!-- The weekly session moved from Wednesday to Thursday at week 3, which
+         is a change members had already put in their calendars. The note below
+         says so plainly. Take it out once the cohort has graduated, or once
+         everyone has obviously caught up. -->
+    <div class="callout callout-note" style="margin-top:var(--s-5)">
+      <p class="callout-title">The Power Hour moved to Thursdays</p>
+      <p class="small">From week 3 the weekly session is on a Thursday, not a Wednesday. Times still rotate week to week, so check the row you are planning for, and replace any recurring invite you set up in September.</p>
+    </div>
+
+    <!-- Adding a recording to a session that has run: put the link inside that
+         row's topic cell, after the <strong>, like this:
+           <a class="rec" href="https://..." target="_blank" rel="noopener">Watch the recording</a>
+         Nothing else changes. The row greys itself out from its data-until. -->
+    <div class="table-scroll" style="margin-top:var(--s-4)">
       <table>
-        <caption>Power Hours are on Wednesdays, except the Thursday kickoff. Times are Central (Eastern +1 hour, Pacific &minus;2). Suggested reads are optional.</caption>
+        <caption>Power Hours are on Thursdays. Times are Central (Eastern +1 hour, Pacific &minus;2). Suggested reads are optional.</caption>
         <thead><tr><th scope="col">Wk</th><th scope="col">Date</th><th scope="col">Time (CT)</th><th scope="col">Power Hour topic</th><th scope="col">Suggested read</th></tr></thead>
         <tbody>
-          <tr class="moment"><td class="col-week">1</td><td class="nowrap">Thu 24 Sep</td><td class="nowrap">Time TBD</td><td class="wk-topic"><strong>Kickoff: Plug In</strong></td><td class="read">Daring Greatly by Bren&eacute; Brown</td></tr>
-          <tr><td class="col-week">2</td><td>30 Sep</td><td class="nowrap">11:30 AM &ndash; 12:30 PM</td><td class="wk-topic"><strong>Claiming Your Power</strong></td><td class="read">Presence by Amy Cuddy</td></tr>
-          <tr><td class="col-week">3</td><td>7 Oct</td><td class="nowrap">3:00 &ndash; 4:00 PM</td><td class="wk-topic"><strong>Power Platform 101: Your Superpower</strong></td><td class="read">Broad Band by Claire L. Evans</td></tr>
-          <tr><td class="col-week">4</td><td>14 Oct</td><td class="nowrap">5:00 &ndash; 6:00 PM</td><td class="wk-topic"><strong>Your Story, Your Brand</strong></td><td class="read">Stand Out by Dorie Clark</td></tr>
-          <tr><td class="col-week">5</td><td>21 Oct</td><td class="nowrap">8:00 &ndash; 9:00 AM</td><td class="wk-topic"><strong>Presentation Skills I</strong></td><td class="read">Resonate by Nancy Duarte</td></tr>
-          <tr><td class="col-week">6</td><td>28 Oct</td><td class="nowrap">11:30 AM &ndash; 12:30 PM</td><td class="wk-topic"><strong>Data Storytelling with Power BI</strong></td><td class="read">Storytelling with Data by Cole Nussbaumer Knaflic</td></tr>
-          <tr><td class="col-week">7</td><td>4 Nov</td><td class="nowrap">3:00 &ndash; 4:00 PM</td><td class="wk-topic"><strong>The Art of Advocating for Yourself</strong></td><td class="read">Women Don&rsquo;t Ask by Linda Babcock &amp; Sara Laschever</td></tr>
-          <tr><td class="col-week">8</td><td>11 Nov</td><td class="nowrap">5:00 &ndash; 6:00 PM</td><td class="wk-topic"><strong>Copilot as Your Career Co-Pilot</strong></td><td class="read">The Big Nine by Amy Webb</td></tr>
-          <tr class="moment"><td class="col-week">9</td><td>18 Nov</td><td class="nowrap">8:00 &ndash; 9:00 AM</td><td class="wk-topic"><strong>Community Showcase Night</strong></td><td class="read">All These Wonders, edited by Catherine Burns</td></tr>
-          <tr><td class="col-week">10</td><td class="nowrap">25 Nov<sup>*</sup></td><td class="nowrap">11:30 AM &ndash; 12:30 PM</td><td class="wk-topic"><strong>Resumes That Read Like Leadership</strong></td><td class="read">Nice Girls Don&rsquo;t Get the Corner Office by Lois P. Frankel</td></tr>
-          <tr><td class="col-week">11</td><td>2 Dec</td><td class="nowrap">3:00 &ndash; 4:00 PM</td><td class="wk-topic"><strong>Interviewing with Impact</strong></td><td class="read">Ask for More by Alexandra Carter</td></tr>
-          <tr class="moment"><td class="col-week">12</td><td>9 Dec</td><td class="nowrap">5:00 &ndash; 6:00 PM</td><td class="wk-topic"><strong>Graduation: The Power Hour Live</strong></td><td class="read">Becoming by Michelle Obama</td></tr>
+          <tr class="moment" data-until="2026-09-24T23:59:59-05:00"><td class="col-week">1</td><td class="nowrap">Thu 24 Sep</td><td class="nowrap">Time TBD</td><td class="wk-topic"><strong>Kickoff: Plug In</strong></td><td class="read">Daring Greatly by Bren&eacute; Brown</td></tr>
+          <tr data-until="2026-09-30T23:59:59-05:00"><td class="col-week">2</td><td class="nowrap">Wed 30 Sep</td><td class="nowrap">11:30 AM &ndash; 12:30 PM</td><td class="wk-topic"><strong>Claiming Your Power</strong></td><td class="read">Presence by Amy Cuddy</td></tr>
+          <tr data-until="2026-10-08T23:59:59-05:00"><td class="col-week">3</td><td>8 Oct</td><td class="nowrap">3:00 &ndash; 4:00 PM</td><td class="wk-topic"><strong>Power Platform 101: Your Superpower</strong></td><td class="read">Broad Band by Claire L. Evans</td></tr>
+          <tr data-until="2026-10-15T23:59:59-05:00"><td class="col-week">4</td><td>15 Oct</td><td class="nowrap">11:00 AM &ndash; 12:00 PM</td><td class="wk-topic"><strong>Your Story, Your Brand</strong></td><td class="read">Stand Out by Dorie Clark</td></tr>
+          <tr data-until="2026-10-22T23:59:59-05:00"><td class="col-week">5</td><td>22 Oct</td><td class="nowrap">8:00 &ndash; 9:00 AM</td><td class="wk-topic"><strong>Presentation Skills I</strong></td><td class="read">Resonate by Nancy Duarte</td></tr>
+          <tr data-until="2026-10-29T23:59:59-05:00"><td class="col-week">6</td><td>29 Oct</td><td class="nowrap">11:30 AM &ndash; 12:30 PM</td><td class="wk-topic"><strong>Data Storytelling with Power BI</strong></td><td class="read">Storytelling with Data by Cole Nussbaumer Knaflic</td></tr>
+          <tr data-until="2026-11-05T23:59:59-06:00"><td class="col-week">7</td><td>5 Nov</td><td class="nowrap">3:00 &ndash; 4:00 PM</td><td class="wk-topic"><strong>The Art of Advocating for Yourself</strong></td><td class="read">Women Don&rsquo;t Ask by Linda Babcock &amp; Sara Laschever</td></tr>
+          <tr data-until="2026-11-12T23:59:59-06:00"><td class="col-week">8</td><td>12 Nov</td><td class="nowrap">10:00 &ndash; 11:00 AM</td><td class="wk-topic"><strong>Copilot as Your Career Co-Pilot</strong></td><td class="read">The Big Nine by Amy Webb</td></tr>
+          <tr class="moment" data-until="2026-11-19T23:59:59-06:00"><td class="col-week">9</td><td>19 Nov</td><td class="nowrap">8:00 &ndash; 9:00 AM</td><td class="wk-topic"><strong>Community Showcase Night</strong></td><td class="read">All These Wonders, edited by Catherine Burns</td></tr>
+          <tr data-until="2026-11-24T23:59:59-06:00"><td class="col-week">10</td><td class="nowrap">Tue 24 Nov<sup>*</sup></td><td class="nowrap">11:30 AM &ndash; 12:30 PM</td><td class="wk-topic"><strong>Resumes That Read Like Leadership</strong></td><td class="read">Nice Girls Don&rsquo;t Get the Corner Office by Lois P. Frankel</td></tr>
+          <tr data-until="2026-12-03T23:59:59-06:00"><td class="col-week">11</td><td>3 Dec</td><td class="nowrap">3:00 &ndash; 4:00 PM</td><td class="wk-topic"><strong>Interviewing with Impact</strong></td><td class="read">Ask for More by Alexandra Carter</td></tr>
+          <tr class="moment" data-until="2026-12-10T23:59:59-06:00"><td class="col-week">12</td><td>10 Dec</td><td class="nowrap">10:00 &ndash; 11:00 AM</td><td class="wk-topic"><strong>Graduation: The Power Hour Live</strong></td><td class="read">Becoming by Michelle Obama</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="small muted" style="margin-top:var(--s-3)"><sup>*</sup> Thanksgiving week: this session may move to Tuesday 24 November. Confirmed in your welcome email.</p>
+    <p class="small muted" style="margin-top:var(--s-3)"><sup>*</sup> Week 10 is on a <strong>Tuesday</strong>, because of US Thanksgiving.</p>
   </section>
 
   <!-- ============================ CURRENTS =========================== -->
@@ -630,7 +656,7 @@
     </details>
     <details class="faq">
       <summary>What if I can&rsquo;t make the Power Hour live?</summary>
-      <p>Times rotate across four slots, and every session is posted within 24 hours. Watching within 48 hours counts as attending.</p>
+      <p>Times rotate across five slots, and every session is posted within 24 hours. Watching within 48 hours counts as attending.</p>
     </details>
     <details class="faq">
       <summary>What if I miss a Circuit session or a Power Pair conversation?</summary>
@@ -645,7 +671,7 @@
       <p>Check junk first, then add the senders listed in your confirmation email to your contacts.</p>
     </details>
     <details class="faq">
-      <summary>What happens after 9 December?</summary>
+      <summary>What happens after 10 December?</summary>
       <p>Circuit graduates can apply for Power Pairs. Anyone can come back as a mentor or Circuit Lead; the End-of-Cohort Assessment asks. Most of our mentors came through the program.</p>
     </details>
   </section>
@@ -691,5 +717,35 @@
 </a>
 
 <script src="../../assets/js/wip.js" defer></script>
+<script>
+// Grey out the sessions that have already happened.
+//
+// Each row carries the end of its own day in Central time, so the table ages
+// on its own rather than needing somebody to edit it every Thursday. End of
+// day, not the session's end time, on purpose: a member looking for the
+// morning's joining link at noon should not find that row already crossed off.
+//
+// Kept on this page because no other page has a schedule to age.
+(function () {
+  var rows = document.querySelectorAll('tr[data-until]');
+  if (!rows.length) return;
+  var now = Date.now();
+
+  Array.prototype.forEach.call(rows, function (row) {
+    var until = Date.parse(row.getAttribute('data-until'));
+    // An unparseable date leaves the row alone: better a schedule that forgets
+    // to grey something than one that greys out a session nobody has had yet.
+    if (isNaN(until) || until > now) return;
+
+    row.classList.add('is-past');
+    var wk = row.querySelector('.col-week');
+    if (!wk) return;
+    // Never colour alone. A check mark for sighted readers, and words for a
+    // screen reader, which announces neither the colour nor the mark.
+    wk.insertAdjacentHTML('afterbegin', '<span class="done-mark" aria-hidden="true">✓</span>');
+    wk.insertAdjacentHTML('beforeend', '<span class="visually-hidden"> (done)</span>');
+  });
+})();
+</script>
 </body>
 </html>
