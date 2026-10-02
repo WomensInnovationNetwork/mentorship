@@ -1149,14 +1149,19 @@ details.faq p { color: var(--ink-2); font-size: 0.9375rem; }
   display: flex; flex-direction: column; gap: var(--s-3);
 }
 .person-avatar {
-  /* A soft arch rather than a circle: the 999px top corners clamp to half
-     the width, so the top is a true semicircle at any size. */
-  width: 72px; height: 88px; border-radius: 999px 999px var(--r-md) var(--r-md); flex: none;
+  /* A circle. This was an arch, 72x88 with rounded top corners and a square
+     base: a shape that, drawn around a person's face and outlined with a thin
+     ring, reads as a headstone. Nobody intends that and everybody sees it. A
+     circle carries no such reading at any size, and the page already has the
+     bloom motif doing the decorative work. */
+  width: 80px; height: 80px; border-radius: 50%; flex: none;
   display: grid; place-items: center; overflow: hidden;
   background: var(--ribbon-round); color: #fff;
   font-family: var(--font-serif); font-size-adjust: var(--serif-adjust); font-weight: 600; font-size: 1.45rem; letter-spacing: .01em;
-  /* A blush halo, so a photo reads as framed rather than cut out. */
-  box-shadow: 0 0 0 4px var(--blush), 0 0 0 5px var(--line);
+  /* No ring. The halo and hairline were there to stop a photo looking cut
+     out of the card, but an outline around a portrait is most of what made
+     the old shape funereal. A circle holds its own edge. */
+  box-shadow: none;
 }
 img.person-avatar { object-fit: cover; }
 
@@ -1177,7 +1182,7 @@ img.person-avatar { object-fit: cover; }
   .person-feature {
     display: grid; grid-template-columns: auto 1fr; column-gap: var(--s-5); align-items: start;
   }
-  .person-feature .person-avatar { width: 92px; height: 112px; font-size: 1.6rem; grid-row: 1 / span 3; }
+  .person-feature .person-avatar { width: 100px; height: 100px; font-size: 1.7rem; grid-row: 1 / span 3; }
   .person-feature .person-bio,
   .person-feature .person-links { grid-column: 2; }
   .person-feature .person-links { margin-top: var(--s-3); padding-top: 0; }
