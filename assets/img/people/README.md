@@ -32,14 +32,19 @@ Adding someone new? Put `data-photo="her-name.jpg"` on her `.person-avatar` in
 
 ## Specs
 
-- **Portrait, 4:5.** The avatar is an arch (72×88), so a square or landscape
-  photo gets cropped from the center and heads can end up off-frame. Crop
-  to 600×750 around the face.
-- **400×400 minimum.** Displayed at 72px (92px for the featured card), but
+- **Square, or close to it.** The avatar is a circle (80px, 100px on the
+  featured card). A photo is centre-cropped to fill it, so anything much
+  taller or wider than square loses its edges. 600×600 is plenty.
+  The 600×750 portraits already in this folder still work: a 4:5 crop loses
+  a little top and bottom to the circle, which is why the face wants to sit
+  in the middle rather than high in the frame.
+- **400×400 minimum.** Displayed at 80px (100px for the featured card), but
   that's 2–3× on a retina screen. Larger than 800×800 is wasted bytes.
 - **JPEG, under ~150 KB.** Ten of these load on one page.
-- **Face roughly centered**, cropped somewhere between the shoulders and the
-  top of the head. A full-body shot disappears at 72px.
+- **Face centered**, cropped somewhere between the shoulders and the top of
+  the head. A circle cuts the corners off, so leave a little room around the
+  head rather than filling the frame with it. A full-body shot disappears at
+  80px.
 
 ## Consent
 
