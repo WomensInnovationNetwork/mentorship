@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Networking | Women in Power</title>
+<meta name="description" content="How to introduce yourself so people remember you, the best question to ask next, and ten things that work at a conference. From Women in Power.">
+<meta name="theme-color" content="#3b0b4e">
+<script>(function(){try{var t=localStorage.getItem('wip-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<script>document.documentElement.classList.add('rv-on');setTimeout(function(){if(!window.WIP_REVEAL)document.documentElement.classList.remove('rv-on');},3000);</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500..700;1,500..700&family=Inter:wght@400;500;600&family=Jost:wght@400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/wip.css">
+<style>
+  /* Page-specific. Promote into wip.css only if a second page needs it. */
+
+  /* Something to say out loud. Bigger than body copy, set in the serif, so a
+     reader's eye lands on the words they would actually use. */
+  .say {
+    background: var(--surface-2); border: 1px solid var(--line);
+    border-left: 4px solid var(--petal); border-radius: var(--r-md);
+    padding: var(--s-4) var(--s-5); margin: 0;
+    font-family: var(--font-serif); font-size-adjust: var(--serif-adjust);
+    font-size: 1.15rem; line-height: 1.5; color: var(--heading);
+  }
+  .say + .say { margin-top: var(--s-3); }
+  .say .fill { color: var(--accent); font-style: italic; }
+  /* The one you are being talked out of. Same shape, read as the before. */
+  .say-no { border-left-color: var(--line); color: var(--ink-3); }
+
+  .formula {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: clamp(1.05rem, .9rem + .7vw, 1.5rem); line-height: 1.35;
+    background: var(--ribbon-text); -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+
+  /* Ten tips. .takeaway is PPCC's, reused by name on purpose: wip.css already
+     gives that class the corner bloom and the scroll reveal. */
+  .tips { display: grid; gap: var(--s-4); margin-top: var(--s-5); }
+  @media (min-width: 700px) { .tips { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1040px) { .tips { grid-template-columns: repeat(3, 1fr); } }
+  .takeaway { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: var(--s-5); }
+  .takeaway .n {
+    font-family: var(--font-serif); font-size-adjust: var(--serif-adjust); font-weight: 600; font-size: 1.9rem; line-height: 1;
+    background: var(--bloom-text); -webkit-background-clip: text; background-clip: text; color: transparent;
+    font-variant-numeric: lining-nums;
+  }
+  .takeaway h3 { margin-top: var(--s-2); font-size: 1.0625rem; }
+  .takeaway p { font-size: 0.9375rem; color: var(--ink-2); margin-top: var(--s-2); }
+  .takeaway .q {
+    display: block; margin-top: var(--s-3); font-family: var(--font-serif);
+    font-size-adjust: var(--serif-adjust); font-size: 1.02rem; color: var(--heading);
+  }
+
+  /* The closing challenge. Same warm band the cohort and skilling pages use. */
+  .spotlight {
+    background:
+      var(--bloom-rose) right -60px top -60px / 220px 220px no-repeat,
+      radial-gradient(700px 300px at 85% -40%, var(--mast-glow-1), transparent 62%),
+      linear-gradient(150deg, var(--mast-a) 0%, var(--mast-b) 100%);
+    color: #fff; border-radius: var(--r-xl); padding: var(--s-6);
+    position: relative; overflow: hidden; border: 1px solid var(--line);
+  }
+  .spotlight h2, .spotlight h3 { color: #fff; }
+  .spotlight p, .spotlight li { color: rgba(255,255,255,.85); }
+  .spotlight .eyebrow { color: #f7b3cf; }
+  .spotlight strong { color: #fff; }
+  .spotlight::after { content: ""; position: absolute; inset: auto 0 0 0; height: 4px; background: var(--ribbon); }
+
+  /* Four things to do before you leave. Ticks are drawn, not typed: a list of
+     emoji check marks is read aloud one by one by a screen reader. */
+  .challenge { list-style: none; padding: 0; margin: var(--s-5) 0 0; max-width: 60ch; }
+  .challenge li {
+    position: relative; padding-left: 2.2rem; margin: 0 0 var(--s-3);
+    font-size: 1.05rem; color: rgba(255,255,255,.92);
+  }
+  .challenge li::before {
+    content: ""; position: absolute; left: 0; top: .35em;
+    width: 1.25rem; height: .62rem; border: 2px solid #7ee2b8;
+    border-top: 0; border-right: 0; transform: rotate(-45deg);
+  }
+
+  .byline {
+    display: flex; gap: var(--s-4); align-items: center; flex-wrap: wrap;
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: var(--r-lg); padding: var(--s-5); box-shadow: var(--sh-1);
+  }
+  .byline img { width: 64px; height: 64px; border-radius: 50%; flex: none; object-fit: cover; }
+  .byline .who { font-family: var(--font-serif); font-size-adjust: var(--serif-adjust); font-size: 1.15rem; font-weight: 700; color: var(--heading); }
+  .byline .what { font-family: var(--font-display); font-size: var(--t-xs); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-top: 2px; }
+
+  @media print {
+    .spotlight { background: #fff; color: #000; border: 1px solid #ccc; padding: 0; }
+    .spotlight h2, .spotlight h3 { color: #000; }
+    .spotlight p, .spotlight li, .challenge li { color: #222; }
+    .spotlight .eyebrow { color: #3b0b4e; }
+    .challenge li::before { border-color: #3b0b4e; }
+    .formula { -webkit-text-fill-color: #3b0b4e; color: #3b0b4e; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="announce">
+  <a href="../ppcc-2026/">
+    <span>Women in Power is at PPCC 2026, all three days</span>
+    <span class="where">MGM Grand, Las Vegas &middot; 27&ndash;29 October</span>
+    <span class="go">See the program &rarr;</span>
+  </a>
+</div>
+
+<header class="masthead" id="top">
+  <div class="wrap">
+    <div class="masthead-top">
+      <a class="lockup" href="../">
+        <img class="lockup-img" src="../assets/img/wip-wordmark-reverse.png" alt="Women in Power" width="1200" height="607">
+      </a>
+      <div class="masthead-right">
+        <nav class="masthead-nav" aria-label="Main">
+          <a href="../mentoring/">Mentoring</a>
+          <a href="../skilling/">Skilling</a>
+          <a href="./" aria-current="page">Networking</a>
+          <a href="../about/">About us</a>
+        </nav>
+        <button type="button" class="theme-toggle" data-theme-toggle>Theme</button>
+      </div>
+    </div>
+    <p class="kicker">Networking</p>
+    <h1>Nobody should walk in <em>alone</em>.</h1>
+    <p class="standfirst">How to introduce yourself so people remember you, the one question worth asking next, and ten things that actually work in a conference hall.</p>
+    <p class="row" style="margin-top:var(--s-5)">
+      <a class="btn btn-accent" href="#intro">Start with your introduction &rarr;</a>
+      <a class="btn btn-ghost" href="../ppcc-2026/">Where to find us at PPCC</a>
+    </p>
+  </div>
+</header>
+
+<div class="jump">
+  <div class="wrap">
+    <ul>
+      <li><a href="#intro">Your introduction</a></li>
+      <li><a href="#question">The next question</a></li>
+      <li><a href="#tips">Ten that work</a></li>
+      <li><a href="#challenge">The challenge</a></li>
+    </ul>
+  </div>
+</div>
+
+<main id="main">
+<div class="wrap">
+
+  <!--
+    ======================================================================
+    WHERE THIS PAGE COMES FROM
+
+    Written by Delia Zuniga and sent to Sravani on 6 Oct 2026 for this
+    page, with "feel free to shorten it if it's too long". It has been
+    shortened: the prose around each tip is tighter, and the repeated
+    framing between sections is gone. Nothing was added that she did not
+    write, and the examples and scripts are hers word for word.
+
+    Two things from the source are deliberately NOT here:
+
+    * Her email signature. It carried a personal mobile number and a
+      personal email address. Neither belongs on a public page, and
+      nobody asked for them to be published.
+    * The names in examples 2 and 3. The source used "Jessica" and
+      "Sarah" as illustrations. Jessica Edwards is a real person on the
+      About page, and a stock example in her first name reads as a
+      claim about her career. Both examples now use names that belong
+      to nobody on this site. Example 1 is Delia's own, about herself,
+      and stays as she wrote it.
+
+    The byline at the foot credits her. If she would rather not be
+    named, take the .byline block out; nothing else depends on it.
+    ======================================================================
+  -->
+
+  <!-- ============================== INTRO ============================ -->
+  <section class="section" id="intro">
+    <div class="section-head">
+      <p class="eyebrow">Your introduction</p>
+      <h2>People remember your story, not your <em>title</em></h2>
+    </div>
+    <p class="lead">The most common networking mistake is leading with a job title. There is nothing wrong with it. It is just not memorable, and it ends the conversation instead of opening one.</p>
+
+    <p class="say say-no">&ldquo;Hi, I&rsquo;m Jane. I&rsquo;m a Senior Consultant at XYZ.&rdquo;</p>
+
+    <p style="margin-top:var(--s-5)">People remember stories, passions, problems solved and goals. Networking is about making a connection, not exchanging business cards.</p>
+
+    <div class="panel-bloom" style="margin-top:var(--s-5)">
+      <p class="eyebrow">The Women in Power introduction formula</p>
+      <p class="formula" style="margin-top:var(--s-3)">Name + what you do + why you care + what you&rsquo;re exploring</p>
+      <p class="say" style="margin-top:var(--s-4)">Hi, I&rsquo;m <span class="fill">[name]</span>. I help <span class="fill">[audience]</span> achieve <span class="fill">[outcome]</span>. I&rsquo;m passionate about <span class="fill">[interest or mission]</span>, and right now I&rsquo;m looking to connect with people interested in <span class="fill">[topic, goal or opportunity]</span>.</p>
+      <div class="grid grid-4" style="margin-top:var(--s-5)">
+        <div class="card card-bloom"><h4>It gives context</h4></div>
+        <div class="card card-bloom"><h4>It shows personality</h4></div>
+        <div class="card card-bloom"><h4>It leaves a thread to pull</h4></div>
+        <div class="card card-bloom"><h4>It tells people how to help you</h4></div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:var(--s-7)">Three of them, filled in</h3>
+    <div class="grid grid-3" style="margin-top:var(--s-4)">
+      <div class="card card-bloom">
+        <h4>The community builder</h4>
+        <p class="small muted" style="margin-top:var(--s-3)">Hi, I&rsquo;m Delia. I help organizations adopt Microsoft Copilot and AI solutions. I&rsquo;m passionate about making technology more accessible, and I love building communities where people can learn together. Right now, I&rsquo;m connecting with leaders who are exploring practical ways to bring AI into their organizations.</p>
+      </div>
+      <div class="card card-bloom">
+        <h4>The career pivot</h4>
+        <p class="small muted" style="margin-top:var(--s-3)">Hi, I&rsquo;m Priya. I&rsquo;m a Business Analyst transitioning into AI and Power Platform. I&rsquo;m fascinated by how technology can simplify work, and I&rsquo;m looking to connect with people who have successfully navigated a similar career change.</p>
+      </div>
+      <div class="card card-bloom">
+        <h4>The change maker</h4>
+        <p class="small muted" style="margin-top:var(--s-3)">Hi, I&rsquo;m Noor. I help nonprofits use technology to eliminate manual processes so they can focus more time on serving their communities. I&rsquo;m especially interested in how AI can support small teams, and I&rsquo;d love to meet others working in that space.</p>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:var(--s-5)">
+      <p class="callout-title">In a busy room, cut it in half</p>
+      <p class="say" style="margin-top:var(--s-3)">Hi, I&rsquo;m Delia. I help organizations adopt AI using Microsoft technologies, and I&rsquo;m here to learn how others are driving adoption successfully.</p>
+      <p class="say">Hi, I&rsquo;m Priya. I&rsquo;m transitioning into AI and hoping to meet people who can share lessons from their journey.</p>
+      <p class="small muted" style="margin-top:var(--s-3)">Both invite a conversation instead of closing one.</p>
+    </div>
+  </section>
+
+  <!-- ============================ QUESTION =========================== -->
+  <section class="section" id="question">
+    <div class="section-head">
+      <p class="eyebrow">Then hand it over</p>
+      <h2>The best networking question</h2>
+    </div>
+    <p class="lead">Once you have introduced yourself, move the spotlight.</p>
+    <p class="say">&ldquo;What brought you to this event?&rdquo;</p>
+    <p class="say">&ldquo;What are you most excited to learn while you&rsquo;re here?&rdquo;</p>
+    <p style="margin-top:var(--s-4)">Either one gets you further than &ldquo;so, what do you do?&rdquo;</p>
+
+    <div class="callout" style="margin-top:var(--s-5)">
+      <p class="callout-title">Remember</p>
+      <p><strong>People rarely remember your title. They remember your passion, your story, and how you made them feel.</strong></p>
+      <p class="small muted">The goal is not to impress everyone in the room. It is to help the right people remember you, and to make it easy for them to carry on the conversation.</p>
+    </div>
+  </section>
+
+  <!-- ============================== TIPS ============================= -->
+  <section class="section" id="tips">
+    <div class="section-head">
+      <p class="eyebrow">In the hall</p>
+      <h2>Ten things that <em>work</em> at a conference</h2>
+    </div>
+
+    <div class="tips">
+      <div class="takeaway">
+        <div class="n">01</div>
+        <h3>Nearly everyone is nervous</h3>
+        <p>Experienced speakers, MVPs and community leaders all walk in wondering who they will talk to. If you feel uncomfortable, you are not the only one. Take the pressure off by assuming the other person would be glad someone said hello first.</p>
+      </div>
+      <div class="takeaway">
+        <div class="n">02</div>
+        <h3>Arrive early to sessions</h3>
+        <p>People are far more open to conversation before a session than after it.</p>
+        <span class="q">&ldquo;Have you been to this conference before?&rdquo;</span>
+        <span class="q">&ldquo;What made you choose this session?&rdquo;</span>
+      </div>
+      <div class="takeaway">
+        <div class="n">03</div>
+        <h3>Be the one who makes room</h3>
+        <p>See someone standing on their own? Invite them over. One invitation can change somebody&rsquo;s whole conference.</p>
+        <span class="q">&ldquo;We&rsquo;re heading to lunch. You&rsquo;re welcome to join us.&rdquo;</span>
+      </div>
+      <div class="takeaway">
+        <div class="n">04</div>
+        <h3>Don&rsquo;t chase important people. Find your people.</h3>
+        <p>Plenty of attendees spend the week trying to meet speakers. Look instead for shared interests, challenges and goals. The relationships that last often start between two people learning the same thing at the same time.</p>
+      </div>
+      <div class="takeaway">
+        <div class="n">05</div>
+        <h3>Wear your curiosity, not your credentials</h3>
+        <p>A thoughtful question lands better than an impressive title.</p>
+        <span class="q">&ldquo;What are you working on right now?&rdquo;</span>
+        <span class="q">&ldquo;What&rsquo;s been your biggest takeaway so far?&rdquo;</span>
+      </div>
+      <div class="takeaway">
+        <div class="n">06</div>
+        <h3>Use the rule of three</h3>
+        <p>Three new people. Three sessions outside your comfort zone. Three follow-ups afterwards. Small targets are the ones you actually hit.</p>
+      </div>
+      <div class="takeaway">
+        <div class="n">07</div>
+        <h3>Introduce people to each other</h3>
+        <p>Becoming a connector is the fastest way to build relationships. Being known as someone who helps beats being known as someone who collects contacts.</p>
+        <span class="q">&ldquo;You should meet Maria. She&rsquo;s working on something very similar.&rdquo;</span>
+      </div>
+      <div class="takeaway">
+        <div class="n">08</div>
+        <h3>Sit somewhere new</h3>
+        <p>Don&rsquo;t spend the day with your coworkers. At lunch, in a session, at an evening event, take the seat next to someone you don&rsquo;t know. A seat choice has turned into a mentor, a collaborator and a friend more than once.</p>
+      </div>
+      <div class="takeaway">
+        <div class="n">09</div>
+        <h3>Swap LinkedIn while you&rsquo;re still talking</h3>
+        <p>Not months later, when the name has gone. Connect there and then, with a line about what you talked about.</p>
+        <span class="q">&ldquo;Great meeting you at Women in Power. I enjoyed hearing about your work with Power Platform and look forward to staying connected.&rdquo;</span>
+      </div>
+      <div class="takeaway">
+        <div class="n">10</div>
+        <h3>Ask how you can help</h3>
+        <p>The best networkers do not ask what someone can do for them. They ask how they can support that person. Share a resource, make an introduction, offer encouragement, answer a question. Generosity builds the longer-lasting relationship.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CHALLENGE ========================== -->
+  <section class="section" id="challenge">
+    <div class="spotlight">
+      <p class="eyebrow">Before you leave</p>
+      <h2 style="margin-top:var(--s-2)">A Women in Power challenge</h2>
+      <ul class="challenge">
+        <li>Introduce yourself to someone new</li>
+        <li>Invite someone to join your group for a meal or a session</li>
+        <li>Make one introduction between two people who should know each other</li>
+        <li>Follow up with at least three new connections</li>
+      </ul>
+      <p style="margin-top:var(--s-5);max-width:60ch">Because the goal is not just to attend the conference. <strong>It is to leave knowing more people than when you arrived, and to help someone else feel like they belong too.</strong></p>
+      <p class="row" style="margin-top:var(--s-5)">
+        <a class="btn btn-accent" href="../ppcc-2026/">Find us at PPCC, 27&ndash;29 October &rarr;</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================= BYLINE ============================ -->
+  <section class="section">
+    <div class="byline">
+      <img src="../assets/img/people/delia-zuniga.jpg" alt="" width="64" height="64">
+      <div>
+        <p class="who">Written by Delia Zuniga</p>
+        <p class="what">Chief Storyteller</p>
+        <p class="small muted" style="margin-top:var(--s-2)">Delia leads growth and outreach for Women in Power. <a href="../about/">Meet the rest of the team &rarr;</a></p>
+      </div>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-row">
+    <div>
+      <img class="win-logo" src="../assets/img/win-logo.png" alt="Women's Innovation Network (WIN)">
+      <p class="tagline">When women innovate, the future follows.</p>
+      <p class="small" style="margin-top:var(--s-2)">Women in Power is a program of the Women&rsquo;s Innovation Network.</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="../">Women in Power</a>
+      <a href="../about/">About us</a>
+      <a href="../mentoring/">Mentoring</a>
+      <a href="../skilling/">Skilling Series</a>
+      <a href="./">Networking</a>
+      <a href="https://www.linkedin.com/company/women-in-power-platform" target="_blank" rel="noopener">Women in Power on LinkedIn</a>
+    </nav>
+  </div>
+</footer>
+
+<a class="to-top" href="#top" title="Back to top">
+  <span class="visually-hidden">Back to top</span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+</a>
+
+<script src="../assets/js/wip.js" defer></script>
+</body>
+</html>
