@@ -16,6 +16,7 @@ Published with GitHub Pages from `main` at
 | `mentoring/mentorship-prompts/` | [`/mentoring/mentorship-prompts/`](https://womensinnovationnetwork.github.io/wip/mentoring/mentorship-prompts/) | Mentor-Ask Prompt Pack (originally EPPC 2026) |
 | `skilling/` | [`/skilling/`](https://womensinnovationnetwork.github.io/wip/skilling/) | The Skilling Series — what it is, the fall plan, the December advent calendar, the session archive |
 | `skilling/speaker-guide/` | [`/skilling/speaker-guide/`](https://womensinnovationnetwork.github.io/wip/skilling/speaker-guide/) | For people speaking in the series: the six steps, the day itself, a first-talk package |
+| `networking/` | [`/networking/`](https://womensinnovationnetwork.github.io/wip/networking/) | Introducing yourself, the question to ask next, ten things that work at a conference |
 | `ppcc-2026/` | [`/ppcc-2026/`](https://womensinnovationnetwork.github.io/wip/ppcc-2026/) | Women in Power at the Power Platform Community Conference, Oct 2026 |
 | `about/` | [`/about/`](https://womensinnovationnetwork.github.io/wip/about/) | Leadership, and the community roll |
 | `style-guide/` | [`/style-guide/`](https://womensinnovationnetwork.github.io/wip/style-guide/) | Living style guide. **Maintainers only; not linked from member pages.** |
@@ -31,16 +32,17 @@ Three pillars at the top level. Everything else lives inside one of them.
 │     └── mentorship-prompts/
 ├── /skilling/                 pillar 2
 │     └── speaker-guide/
-├── /networking/               pillar 3 — not built yet
+├── /networking/               pillar 3
 └── /about/                    site-level, not a pillar
 ```
 
 Two levels of navigation carry this:
 
-- **Primary (masthead)** — pillars first, then About, then pillars with no page
-  yet, quiet and unlinked: Mentoring, Skilling, About us, Networking (soon). It
-  does not grow when a pillar gains a page: the placeholder turns into a link
-  where it stands, which is what Skilling did on 28 Sep 2026.
+- **Primary (masthead)** — the three pillars, then About: Mentoring, Skilling,
+  Networking, About us. All three pillars have pages as of 6 Oct 2026, so there
+  are no `.nav-soon` placeholders left anywhere on the site. About moved to the
+  end when the last one went live: it is the only item that is not a pillar, and
+  with nothing greyed out behind it there was nothing for it to sit in front of.
 - **Secondary (`.subnav`)** — appears on pages *inside* a pillar and lists
   that pillar's pages, labelled with the pillar name.
 
@@ -53,19 +55,23 @@ Pillars without pages render as `.nav-soon` spans, not links — a nav item that
 links and stay visually quiet: a placeholder must never outrank a page someone
 can actually open.
 
-### Adding the Networking pillar
+### Adding a fourth pillar
 
-Skilling went through this on 28 Sep 2026; Networking is the one still to come.
+All three exist now: Mentoring (29 Aug 2026), Skilling (28 Sep), Networking
+(6 Oct). If a fourth is ever justified — and the bar should be high, because
+four top-level items is where a nav starts to need thinking about — this is
+the recipe both of the others went through.
 
-1. Create `networking/index.html` from `skilling/index.html` — the closest
-   thing to a template, and already at one level of depth.
-2. In **every** page's masthead, swap the `<span class="nav-soon">Networking…`
-   for a real link at the right relative depth. It goes where the placeholder
-   stood.
+1. Create `<pillar>/index.html` from `networking/index.html` or
+   `skilling/index.html`. Both are one level deep and carry the full furniture:
+   masthead, jump bar, footer.
+2. Add it to **every** page's masthead, after the existing pillars and before
+   About us. Add `.nav-soon` first only if the page will not land the same day;
+   a nav item that 404s is worse than one that admits it is not ready.
 3. Add a `.subnav` once the pillar has a second page, labelled with the pillar
-   name.
-4. Add a line to every footer nav, update the pillar card on the overview page,
-   and update the table above.
+   name. Skilling is the worked example.
+4. Add a line to every footer nav, add a pillar card to the overview page, and
+   update the table above.
 
 Section 02 of the style guide has the same rules with examples.
 
@@ -146,7 +152,7 @@ Before merging, check: 320px width, 200% browser zoom, keyboard tab order,
 
 ## Audiences
 
-`index.html`, `mentoring/**` and `skilling/**` are **member-facing** — mentors and mentees. `style-guide/`
+`index.html`, `mentoring/**`, `skilling/**` and `networking/**` are **member-facing** — mentors and mentees. `style-guide/`
 is **maintainers only**: it is `noindex`ed and must stay unlinked from every
 member page. Don't add it to a member masthead or footer.
 
