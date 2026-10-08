@@ -54,6 +54,8 @@
      gradient, and on a full-width block that rule paints a rule clean across
      the cell, well past the end of the words. */
   td.wk-topic .rec { display: inline-block; font-size: var(--t-xs); margin-top: 3px; }
+  /* Slides and a recording side by side in one cell. */
+  td.wk-topic .rec + .rec { margin-left: var(--s-3); }
 
   /* Sessions that have already happened. The class is added by the script at
      the bottom of this page, from each row's own data-until, so the table ages
@@ -267,7 +269,13 @@
          recording", and a screen-reader user listing the links on this page
          would otherwise hear that twelve times with nothing to tell them
          apart. Nothing else changes: the row greys itself out from its own
-         data-until. -->
+         data-until.
+
+         Slides work the same way: put the deck in slides/ as
+         week-NN-short-name.html, then link it with the same class, "See the
+         slides" as the words, and its own hidden suffix. Week 3 is the
+         example. When a week has both, slides go first and the recording
+         sits beside them. -->
     <div class="table-scroll" style="margin-top:var(--s-4)">
       <table>
         <caption>Power Hours are on Thursdays. Times are Central (Eastern +1 hour, Pacific &minus;2). Suggested reads are optional.</caption>
@@ -275,7 +283,7 @@
         <tbody>
           <tr class="moment" data-until="2026-09-24T23:59:59-05:00"><td class="col-week">1</td><td class="nowrap">Thu 24 Sep</td><td class="nowrap">Time TBD</td><td class="wk-topic"><strong>Kickoff: Plug In</strong></td><td class="read">Daring Greatly by Bren&eacute; Brown</td></tr>
           <tr data-until="2026-09-30T23:59:59-05:00"><td class="col-week">2</td><td class="nowrap">Wed 30 Sep</td><td class="nowrap">11:30 AM &ndash; 12:30 PM</td><td class="wk-topic"><strong>Claiming Your Power</strong><a class="rec" href="https://youtu.be/FmDJcyOwVLY" target="_blank" rel="noopener">Watch the recording<span class="visually-hidden"> of week 2, Claiming Your Power</span></a></td><td class="read">Presence by Amy Cuddy</td></tr>
-          <tr data-until="2026-10-08T23:59:59-05:00"><td class="col-week">3</td><td>8 Oct</td><td class="nowrap">3:00 &ndash; 4:00 PM</td><td class="wk-topic"><strong>Power Platform 101: Your Superpower</strong></td><td class="read">Broad Band by Claire L. Evans</td></tr>
+          <tr data-until="2026-10-08T23:59:59-05:00"><td class="col-week">3</td><td>8 Oct</td><td class="nowrap">3:00 &ndash; 4:00 PM</td><td class="wk-topic"><strong>Power Platform 101: Your Superpower</strong><a class="rec" href="slides/week-03-power-platform-101.html" target="_blank" rel="noopener">See the slides<span class="visually-hidden"> for week 3, Power Platform 101: Your Superpower</span></a></td><td class="read">Broad Band by Claire L. Evans</td></tr>
           <tr data-until="2026-10-15T23:59:59-05:00"><td class="col-week">4</td><td>15 Oct</td><td class="nowrap">11:00 AM &ndash; 12:00 PM</td><td class="wk-topic"><strong>Your Story, Your Brand</strong></td><td class="read">Stand Out by Dorie Clark</td></tr>
           <tr data-until="2026-10-22T23:59:59-05:00"><td class="col-week">5</td><td>22 Oct</td><td class="nowrap">8:00 &ndash; 9:00 AM</td><td class="wk-topic"><strong>Presentation Skills I</strong></td><td class="read">Resonate by Nancy Duarte</td></tr>
           <tr data-until="2026-10-29T23:59:59-05:00"><td class="col-week">6</td><td>29 Oct</td><td class="nowrap">11:30 AM &ndash; 12:30 PM</td><td class="wk-topic"><strong>Data Storytelling with Power BI</strong></td><td class="read">Storytelling with Data by Cole Nussbaumer Knaflic</td></tr>
