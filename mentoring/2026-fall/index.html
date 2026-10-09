@@ -58,8 +58,9 @@
   td.wk-topic .rec + .rec { margin-left: var(--s-3); }
 
   /* Sessions that have already happened. The class is added by the script at
-     the bottom of this page, from each row's own data-until, so the table ages
-     by itself instead of needing an edit every Thursday. With JavaScript off
+     the bottom of this page, from each row's own data-until (the moment that
+     session ends), so the table ages by itself instead of needing an edit
+     every Thursday. With JavaScript off
      nothing is greyed, which is the right way to fail: a plain, correct
      schedule. --ink-3 holds 5.4:1 or better here in both themes, including on
      the tinted .moment rows, so "done" still means readable. */
@@ -281,18 +282,18 @@
         <caption>Power Hours are on Thursdays. Times are Central (Eastern +1 hour, Pacific &minus;2). Suggested reads are optional.</caption>
         <thead><tr><th scope="col">Wk</th><th scope="col">Date</th><th scope="col">Time (CT)</th><th scope="col">Power Hour topic</th><th scope="col">Suggested read</th></tr></thead>
         <tbody>
-          <tr class="moment" data-until="2026-09-24T23:59:59-05:00"><td class="col-week">1</td><td class="nowrap">Thu 24 Sep</td><td class="nowrap">Time TBD</td><td class="wk-topic"><strong>Kickoff: Plug In</strong></td><td class="read">Daring Greatly by Bren&eacute; Brown</td></tr>
-          <tr data-until="2026-09-30T23:59:59-05:00"><td class="col-week">2</td><td class="nowrap">Wed 30 Sep</td><td class="nowrap">11:30 AM &ndash; 12:30 PM</td><td class="wk-topic"><strong>Claiming Your Power</strong><a class="rec" href="https://youtu.be/FmDJcyOwVLY" target="_blank" rel="noopener">Watch the recording<span class="visually-hidden"> of week 2, Claiming Your Power</span></a></td><td class="read">Presence by Amy Cuddy</td></tr>
-          <tr data-until="2026-10-08T23:59:59-05:00"><td class="col-week">3</td><td>8 Oct</td><td class="nowrap">3:00 &ndash; 4:00 PM</td><td class="wk-topic"><strong>Power Platform 101: Your Superpower</strong><a class="rec" href="slides/week-03-power-platform-101.html" target="_blank" rel="noopener">See the slides<span class="visually-hidden"> for week 3, Power Platform 101: Your Superpower</span></a></td><td class="read">Broad Band by Claire L. Evans</td></tr>
-          <tr data-until="2026-10-15T23:59:59-05:00"><td class="col-week">4</td><td>15 Oct</td><td class="nowrap">11:00 AM &ndash; 12:00 PM</td><td class="wk-topic"><strong>Your Story, Your Brand</strong></td><td class="read">Stand Out by Dorie Clark</td></tr>
-          <tr data-until="2026-10-22T23:59:59-05:00"><td class="col-week">5</td><td>22 Oct</td><td class="nowrap">8:00 &ndash; 9:00 AM</td><td class="wk-topic"><strong>Presentation Skills I</strong></td><td class="read">Resonate by Nancy Duarte</td></tr>
-          <tr data-until="2026-10-29T23:59:59-05:00"><td class="col-week">6</td><td>29 Oct</td><td class="nowrap">11:30 AM &ndash; 12:30 PM</td><td class="wk-topic"><strong>Data Storytelling with Power BI</strong></td><td class="read">Storytelling with Data by Cole Nussbaumer Knaflic</td></tr>
-          <tr data-until="2026-11-05T23:59:59-06:00"><td class="col-week">7</td><td>5 Nov</td><td class="nowrap">3:00 &ndash; 4:00 PM</td><td class="wk-topic"><strong>The Art of Advocating for Yourself</strong></td><td class="read">Women Don&rsquo;t Ask by Linda Babcock &amp; Sara Laschever</td></tr>
-          <tr data-until="2026-11-12T23:59:59-06:00"><td class="col-week">8</td><td>12 Nov</td><td class="nowrap">10:00 &ndash; 11:00 AM</td><td class="wk-topic"><strong>Copilot as Your Career Co-Pilot</strong></td><td class="read">The Big Nine by Amy Webb</td></tr>
-          <tr class="moment" data-until="2026-11-19T23:59:59-06:00"><td class="col-week">9</td><td>19 Nov</td><td class="nowrap">8:00 &ndash; 9:00 AM</td><td class="wk-topic"><strong>Community Showcase Night</strong></td><td class="read">All These Wonders, edited by Catherine Burns</td></tr>
-          <tr data-until="2026-11-24T23:59:59-06:00"><td class="col-week">10</td><td class="nowrap">Tue 24 Nov<sup>*</sup></td><td class="nowrap">11:30 AM &ndash; 12:30 PM</td><td class="wk-topic"><strong>Resumes That Read Like Leadership</strong></td><td class="read">Nice Girls Don&rsquo;t Get the Corner Office by Lois P. Frankel</td></tr>
-          <tr data-until="2026-12-03T23:59:59-06:00"><td class="col-week">11</td><td>3 Dec</td><td class="nowrap">3:00 &ndash; 4:00 PM</td><td class="wk-topic"><strong>Interviewing with Impact</strong></td><td class="read">Ask for More by Alexandra Carter</td></tr>
-          <tr class="moment" data-until="2026-12-10T23:59:59-06:00"><td class="col-week">12</td><td>10 Dec</td><td class="nowrap">10:00 &ndash; 11:00 AM</td><td class="wk-topic"><strong>Graduation: The Power Hour Live</strong></td><td class="read">Becoming by Michelle Obama</td></tr>
+          <tr class="moment" data-until="2026-09-24T23:59:59-05:00"><td class="col-week">1</td><td class="nowrap">Thu 24 Sep</td><td class="nowrap">Time TBD</td><td class="wk-topic"><strong>Kickoff: Plug In</strong><a class="rec" href="https://youtu.be/elZ73mB3TGE" target="_blank" rel="noopener">Watch the recording<span class="visually-hidden"> of week 1, Kickoff: Plug In</span></a></td><td class="read">Daring Greatly by Bren&eacute; Brown</td></tr>
+          <tr data-until="2026-09-30T12:30:00-05:00"><td class="col-week">2</td><td class="nowrap">Wed 30 Sep</td><td class="nowrap">11:30 AM &ndash; 12:30 PM</td><td class="wk-topic"><strong>Claiming Your Power</strong><a class="rec" href="https://youtu.be/FmDJcyOwVLY" target="_blank" rel="noopener">Watch the recording<span class="visually-hidden"> of week 2, Claiming Your Power</span></a></td><td class="read">Presence by Amy Cuddy</td></tr>
+          <tr data-until="2026-10-08T16:00:00-05:00"><td class="col-week">3</td><td>8 Oct</td><td class="nowrap">3:00 &ndash; 4:00 PM</td><td class="wk-topic"><strong>Power Platform 101: Your Superpower</strong><a class="rec" href="slides/week-03-power-platform-101.html" target="_blank" rel="noopener">See the slides<span class="visually-hidden"> for week 3, Power Platform 101: Your Superpower</span></a></td><td class="read">Broad Band by Claire L. Evans</td></tr>
+          <tr data-until="2026-10-15T12:00:00-05:00"><td class="col-week">4</td><td>15 Oct</td><td class="nowrap">11:00 AM &ndash; 12:00 PM</td><td class="wk-topic"><strong>Your Story, Your Brand</strong></td><td class="read">Stand Out by Dorie Clark</td></tr>
+          <tr data-until="2026-10-22T09:00:00-05:00"><td class="col-week">5</td><td>22 Oct</td><td class="nowrap">8:00 &ndash; 9:00 AM</td><td class="wk-topic"><strong>Presentation Skills I</strong></td><td class="read">Resonate by Nancy Duarte</td></tr>
+          <tr data-until="2026-10-29T12:30:00-05:00"><td class="col-week">6</td><td>29 Oct</td><td class="nowrap">11:30 AM &ndash; 12:30 PM</td><td class="wk-topic"><strong>Data Storytelling with Power BI</strong></td><td class="read">Storytelling with Data by Cole Nussbaumer Knaflic</td></tr>
+          <tr data-until="2026-11-05T16:00:00-06:00"><td class="col-week">7</td><td>5 Nov</td><td class="nowrap">3:00 &ndash; 4:00 PM</td><td class="wk-topic"><strong>The Art of Advocating for Yourself</strong></td><td class="read">Women Don&rsquo;t Ask by Linda Babcock &amp; Sara Laschever</td></tr>
+          <tr data-until="2026-11-12T11:00:00-06:00"><td class="col-week">8</td><td>12 Nov</td><td class="nowrap">10:00 &ndash; 11:00 AM</td><td class="wk-topic"><strong>Copilot as Your Career Co-Pilot</strong></td><td class="read">The Big Nine by Amy Webb</td></tr>
+          <tr class="moment" data-until="2026-11-19T09:00:00-06:00"><td class="col-week">9</td><td>19 Nov</td><td class="nowrap">8:00 &ndash; 9:00 AM</td><td class="wk-topic"><strong>Community Showcase Night</strong></td><td class="read">All These Wonders, edited by Catherine Burns</td></tr>
+          <tr data-until="2026-11-24T12:30:00-06:00"><td class="col-week">10</td><td class="nowrap">Tue 24 Nov<sup>*</sup></td><td class="nowrap">11:30 AM &ndash; 12:30 PM</td><td class="wk-topic"><strong>Resumes That Read Like Leadership</strong></td><td class="read">Nice Girls Don&rsquo;t Get the Corner Office by Lois P. Frankel</td></tr>
+          <tr data-until="2026-12-03T16:00:00-06:00"><td class="col-week">11</td><td>3 Dec</td><td class="nowrap">3:00 &ndash; 4:00 PM</td><td class="wk-topic"><strong>Interviewing with Impact</strong></td><td class="read">Ask for More by Alexandra Carter</td></tr>
+          <tr class="moment" data-until="2026-12-10T11:00:00-06:00"><td class="col-week">12</td><td>10 Dec</td><td class="nowrap">10:00 &ndash; 11:00 AM</td><td class="wk-topic"><strong>Graduation: The Power Hour Live</strong></td><td class="read">Becoming by Michelle Obama</td></tr>
         </tbody>
       </table>
     </div>
@@ -742,10 +743,17 @@
 <script>
 // Grey out the sessions that have already happened.
 //
-// Each row carries the end of its own day in Central time, so the table ages
-// on its own rather than needing somebody to edit it every Thursday. End of
-// day, not the session's end time, on purpose: a member looking for the
-// morning's joining link at noon should not find that row already crossed off.
+// Each row carries the moment its session ends, in Central time, so the table
+// ages on its own rather than needing somebody to edit it every Thursday. A
+// row ticks as the hour finishes, not before: someone looking for the joining
+// link while the session is still on will find it in full ink.
+//
+// This used to be the end of the session's day, which left a finished session
+// looking upcoming all evening. Week 1 still uses end of day, because its time
+// was never published.
+//
+// The offsets are written out per row: US daylight time ends on 1 Nov 2026,
+// so October is -05:00 and November onwards is -06:00.
 //
 // Kept on this page because no other page has a schedule to age.
 (function () {
